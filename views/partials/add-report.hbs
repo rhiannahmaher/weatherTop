@@ -1,5 +1,5 @@
 <form class="box" action="/station/{{station._id}}/addreport" method="POST">
-  <label>Enter Track Details:</label>
+  <label>Enter Report Details:</label>
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
@@ -9,9 +9,15 @@
         <input class="input" type="text" placeholder="00.0°C" name="temperature">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="00.00" name="wind speed">
+        <input class="input" type="text" placeholder="00.00kMh" name="wind speed">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="00.00hPa" name="pressure">
+      </div>
+      <div class="field">
+        <input class="input" type="text" placeholder="000deg" name="wind direction">
       </div>
     </div>
   </div>
-  <button class="button is-primary">Add Track</button>
+  <button class="button is-primary">Add Report</button>
 </form>
