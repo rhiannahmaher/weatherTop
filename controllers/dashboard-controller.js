@@ -1,7 +1,7 @@
 export const dashboardController = {
   async index(request, response) {
     const viewData = {
-      title: "Template Application",
+      title: 'Playlist 1 Dashboard'
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
