@@ -1,0 +1,25 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature</th>
+      <th>Wind Speed</th>
+      <th>Pressure</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each playlist.tracks}}
+    <tr>
+      <td>
+        {{title}}
+      </td>
+      <td>
+        {{artist}}
+      </td>
+      <td>
+        {{duration}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

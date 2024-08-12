@@ -1,1 +1,14 @@
-{"file":"./models/reports.json","reports":[]}
+{
+  "file": "./models/reports.json",
+  "reports": [
+    {
+      "code": 21,
+      "temperature": 55.1,
+      "windSpeed": 32.21,
+      "pressure": 11.11,
+      "windDirection": 111,
+      "_id": "eb2b0edb-95a5-4e9b-a5eb-3d989cca7731",
+      "stationid": "7a7e128c-c289-4762-b678-66b628f5e61c"
+    }
+  ]
+}
