@@ -7,5 +7,5 @@ export const router = express.Router();
 router.get("/", dashboardController.index);
 router.get("/dashboard", dashboardController.index);
 router.get("/about", aboutController.index);
-router.post("/dashboard/addplaylist", dashboardController.addPlaylist); // allows button to work for add playlist
+router.post("/dashboard/addstation", dashboardController.addStation); // allows button to work for add playlist
 

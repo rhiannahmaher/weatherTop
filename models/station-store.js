@@ -6,7 +6,7 @@ const db = initStore("stations");
 export const stationStore = {
   async getAllStations() {
     await db.read();
-    return db.data.;
+    return db.data.stations;
   },
 
   async addStation(station) {

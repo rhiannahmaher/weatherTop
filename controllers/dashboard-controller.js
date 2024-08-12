@@ -4,7 +4,7 @@ export const dashboardController = {
   async index(request, response) {
     const viewData = {
       title: "WeatherTop Dashboard", // might chnge to "station dashborad"
-      playlists: await stationStore.getAllStations(), // lists playlists
+      stations: await stationStore.getAllStations(), // lists playlists
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
