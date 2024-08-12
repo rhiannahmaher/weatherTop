@@ -5,19 +5,26 @@
       <th>Temperature</th>
       <th>Wind Speed</th>
       <th>Pressure</th>
+      <th>Wind Direction</th>
     </tr>
   </thead>
   <tbody>
-    {{#each playlist.tracks}}
+    {{#each station.reports}}
     <tr>
       <td>
-        {{title}}
+        {{code}}
       </td>
       <td>
-        {{artist}}
+        {{temperature}}
       </td>
       <td>
-        {{duration}}
+        {{windSpeed}}
+      </td>
+      <td>
+        {{pressure}}
+      </td>
+      <td>
+        {{windDirection}}
       </td>
     </tr>
     {{/each}}
