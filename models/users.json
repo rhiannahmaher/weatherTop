@@ -1,1 +1,12 @@
-{"file":"./models/users.json","users":[]}
+{
+  "file": "./models/users.json",
+  "users": [
+    {
+      "firstName": "Rhiannah",
+      "lastName": "Maher",
+      "email": "rhiannahmaher@hotmail.com",
+      "password": "rhiannahmaher",
+      "_id": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8"
+    }
+  ]
+}
