@@ -9,15 +9,6 @@
       "windDirection": 111,
       "_id": "eb2b0edb-95a5-4e9b-a5eb-3d989cca7731",
       "stationid": "7a7e128c-c289-4762-b678-66b628f5e61c"
-    },
-    {
-      "code": 21,
-      "temperature": 20.7,
-      "windSpeed": 33.33,
-      "pressure": 22.22,
-      "windDirection": 222,
-      "_id": "861c643c-31ed-4591-a5b6-697a6a5c3b32",
-      "stationid": "eaeaa3a2-58b0-446e-944b-2d4a340ebbc9"
     }
   ]
 }

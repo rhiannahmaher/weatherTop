@@ -22,5 +22,6 @@ router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
 
 router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
+router.get("/station/:stationid/deletereport/:reportid", stationController.deleteReport);
 
 
