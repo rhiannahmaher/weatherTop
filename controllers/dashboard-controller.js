@@ -24,5 +24,20 @@ export const dashboardController = {
     await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
+  
+  async deleteStation(request, response) {
+    const stationId = request.params.id;
+    console.log(`Deleting Station ${stationId}`);
+    await stationStore.deleteStationById(stationId);
+    response.redirect("/dashboard");
+  },
+  
+  async deleteReport(request, response) {
+    const stationId = request.params.stationid;
+    const reportId = request.params.reportid;
+    console.log(`Deleting Report ${reportId} from Station ${stationId}`);
+    await reportStore.deleteReport(request.params.reportId);
+    response.redirect("/station/" + stationId);
+  },
 };
 
