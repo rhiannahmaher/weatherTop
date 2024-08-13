@@ -5,25 +5,6 @@ import { accountsController } from "./accounts-controller.js";
 
 export const dashboardController = {
   async index(request, response) {
-    const viewData = {
-      title: "WeatherTop Dashboard", // might chnge to "station dashborad"
-      stations: await stationStore.getAllStations(), // lists playlists
-    };
-    console.log("dashboard rendering");
-    response.render("dashboard-view", viewData);
-  },
-  
-  async addStation(request, response) {
-    const newStation = {
-      title: request.body.title,
-    };
-    console.log(`adding station ${newStation.title}`);
-    await stationStore.addStation(newStation); // statement to add playlist
-    response.redirect("/dashboard");
-  },
-};
-
-async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const viewData = {
       title: "WeatherTop Dashboard",
@@ -32,14 +13,16 @@ async index(request, response) {
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
-...
-  async addPlaylist(request, response) {
+
+  async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
-    const newPlayList = {
+    const newStation = {
       title: request.body.title,
       userid: loggedInUser._id,
     };
-    console.log(`adding playlist ${newPlayList.title}`);
-    await playlistStore.addPlaylist(newPlayList);
+    console.log(`adding station ${newStation.title}`);
+    await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
+};
+
