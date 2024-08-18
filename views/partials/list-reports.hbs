@@ -1,3 +1,105 @@
+<div class="columns is-multiline">
+  
+  <!-- Station Location -->
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://placehold.co/600x400" alt="Location Tag">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p class="title is-4">{{station.title}}</p>
+            <p class="subtitle is-6">
+              Latitude: {{station.latitude}}
+            </p>
+            <p>
+              Longitude: {{station.longitude}}
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- Temperature -->
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://placehold.co/600x400" alt="Icon 2">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p class="title is-4">Temp</p>
+            <p class="subtitle is-6">
+              Min: {{minTemp.temperature}}°C
+            </p>
+            <p>
+              Max: {{maxTemp.temperature}}°C
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- Wind -->
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://placehold.co/600x400" alt="Icon 3">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p class="title is-4">Wind</p>
+            <p class="subtitle is-6">
+              Min Speed: 
+            </p>
+            <p>
+              Max Speed: 
+            </p>
+            <p>
+              Direction:
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+    <!-- Pressure -->
+  <div class="column is-one-quarter">
+    <div class="box">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://placehold.co/600x400" alt="Icon 2">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p class="title is-4">Pressure</p>
+            <p class="subtitle is-6">
+              Min: 
+            </p>
+            <p>
+              Max: 
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="table-container">
     <table class="table is-fullwidth">

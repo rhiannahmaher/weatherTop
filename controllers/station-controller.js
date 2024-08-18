@@ -1,12 +1,19 @@
 import { stationStore } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
+import { reportAnalytics } from "../utils/report-analytics.js";
 
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
+
+    const minTemp = reportAnalytics.getMinTemp(station);
+    const maxTemp = reportAnalytics.getMaxTemp(station);
+
     const viewData = {
       title: "Station",
       station: station,
+      minTemp: minTemp,
+      maxTemp: maxTemp,
     };
     response.render("station-view", viewData);
   },
