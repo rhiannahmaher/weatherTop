@@ -1,12 +1,13 @@
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Weather Code</th>
-      <th>Temperature</th>
-      <th>Wind Speed</th>
-      <th>Pressure</th>
-      <th>Wind Direction</th>
-      <th></th>
+<div class="container">
+  <div class="table-container">
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Weather Code</th>
+          <th>Temperature</th>
+          <th>Wind Speed</th>
+          <th>Wind Direction</th>
+          <th>Pressure</th>
     </tr>
   </thead>
   <tbody>
@@ -22,10 +23,10 @@
         {{windSpeed}}
       </td>
       <td>
-        {{pressure}}
+        {{windDirection}}
       </td>
       <td>
-        {{windDirection}}
+        {{pressure}}
       </td>
       <td>
         <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button">
