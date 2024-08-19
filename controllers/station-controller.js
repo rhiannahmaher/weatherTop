@@ -8,12 +8,20 @@ export const stationController = {
 
     const minTemp = reportAnalytics.getMinTemp(station);
     const maxTemp = reportAnalytics.getMaxTemp(station);
+    const minSpeed = reportAnalytics.getMinSpeed(station);
+    const maxSpeed = reportAnalytics.getMaxSpeed(station);
+    const minPressure = reportAnalytics.getMinPressure(station);
+    const maxPressure = reportAnalytics.getMaxPressure(station);
 
     const viewData = {
       title: "Station",
       station: station,
       minTemp: minTemp,
       maxTemp: maxTemp,
+      minSpeed: minSpeed,
+      maxSpeed: maxSpeed,
+      minPressure: minPressure,
+      maxPressure: maxPressure,
     };
     response.render("station-view", viewData);
   },
