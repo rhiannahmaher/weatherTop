@@ -1,5 +1,3 @@
-// this might be able to be renamed station-controller - look into if a separate controller file is needed for this
-
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 
