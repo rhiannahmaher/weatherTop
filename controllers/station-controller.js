@@ -32,8 +32,8 @@ export const stationController = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
-      pressure: Number(request.body.pressure),
       windDirection: Number(request.body.windDirection),
+      pressure: Number(request.body.pressure),
     };
     console.log(`adding report ${newReport.title}`);
     await reportStore.addReport(station._id, newReport);

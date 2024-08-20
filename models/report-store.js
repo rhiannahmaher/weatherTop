@@ -40,10 +40,16 @@ export const reportStore = {
     await db.write();
   },
 
-  async updateReport(report, updatedReport) {
-    report.title = updatedReport.title;
-    report.artist = updatedReport.artist;
-    report.duration = updatedReport.duration;
+  async updateReport(reportId, updatedReport) {
+    const report = await this.getReportById(reportId);
+    
+    report.code = updatedReport.code;
+    report.temperature = updatedReport.temperature;
+    report.windSpeed = updatedReport.windSpeed;
+    report.windDirection = updatedReport.windDirection;
+    report.pressure = updatedReport.pressure;
+
     await db.write();
-  },
+  }
+
 };
