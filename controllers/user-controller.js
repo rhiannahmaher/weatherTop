@@ -2,7 +2,7 @@ import { userStore } from "../models/user-store.js";
 
 export const userController = {
     async index(request, response) {
-      const userId = request.params.id;
+      const userId = request.params.userid;
       console.log(`Editing User Details ${userId}`); // userId printing to console as undefined 
       const viewData = {
         title: "Edit User Details",
@@ -12,7 +12,7 @@ export const userController = {
     },
 
     async update(request, response) {
-        const userId = request.params.id;
+        const userId = request.params.userid;
         const updatedUser = {
           firstName: request.body.firstName,
           lastName: request.body.lastName,
@@ -22,7 +22,7 @@ export const userController = {
       
           console.log(`Updating User ${userId}`);
           await userStore.updateUser(userId, updatedUser); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
-          response.redirect("/user/" + userId); 
+          response.redirect("/profile"); 
           console.log(updatedUser); // this is printing to console correctly
       }
 }

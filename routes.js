@@ -26,11 +26,11 @@ router.get("/station/:stationid/deletereport/:reportid", stationController.delet
 router.get("/about", aboutController.index);
 
 router.get("/station/:stationid/editreport/:reportid", reportController.index);
-router.post("/station/:stationid/updatereport/:reportid", reportController.update); // route for delete
+router.post("/station/:stationid/updatereport/:reportid", reportController.update); 
 
 router.get("/profile", profileController.index);
 
-router.get("/user/:id/edituser", userController.index);
-router.post("/user/:id/updateuser", userController.update);
+router.get("/user/:userid/edituser", userController.index);
+router.post("/user/:userid/updateuser", userController.update);
 
 

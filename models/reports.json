@@ -13,7 +13,7 @@
     {
       "code": 1,
       "temperature": 1,
-      "windSpeed": 1,
+      "windSpeed": 12,
       "pressure": 1,
       "windDirection": 1,
       "_id": "fb1379cc-5907-4071-8938-6348fee0f308",
