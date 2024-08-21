@@ -14,7 +14,7 @@ export const stationController = {
     const maxPressure = reportAnalytics.getMaxPressure(station);
 
     const viewData = {
-      title: "Station",
+      title: "Station", // controls name on chrome tab - want to change to station.tt=itle
       station: station,
       minTemp: minTemp,
       maxTemp: maxTemp,

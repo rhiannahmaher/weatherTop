@@ -1,22 +1,37 @@
-{{> menu}}  <!-- remove is possible -->
-
-<form class="box" action="/station/{{station._id}}/updatereport/{{report._id}}" method="POST">
-  <label>Report Details:</label>
+<form class="box" action="/station/{{user._id}}/updatereport/{{user._id}}" method="POST">
+  <label>
+    <strong>Report Details:</strong>
+  </label>
   <div class="field is-horizontal">
     <div class="field-body">
       <div class="field">
+        <label>
+          <strong>Weather Code</strong>
+        </label>
         <input class="input" type="text" placeholder="00" name="code" value="{{report.code}}">
       </div>
       <div class="field">
+        <label>
+          <strong>Temperature</strong>
+        </label>
         <input class="input" type="text" placeholder="00.0°C" name="temperature" value="{{report.temperature}}">
       </div>
       <div class="field">
+        <label>
+          <strong>Wind Speed</strong>
+        </label>
         <input class="input" type="text" placeholder="00.00kMh" name="windSpeed" value="{{report.windSpeed}}">
       </div>
       <div class="field">
+        <label>
+          <strong>Wind Direction</strong>
+        </label>
         <input class="input" type="text" placeholder="000deg" name="windDirection" value="{{report.windDirection}}">
       </div>
       <div class="field">
+        <label>
+          <strong>Pressure</strong>
+        </label>
         <input class="input" type="text" placeholder="00.00hPa" name="pressure" value="{{report.pressure}}">
       </div>
     </div>

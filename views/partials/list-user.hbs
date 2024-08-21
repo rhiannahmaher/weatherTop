@@ -12,19 +12,19 @@
       <tbody>
         <tr>
           <td>
-            {{users.firstName}}
+            {{user.firstName}}
           </td>
           <td>
-            {{users.lastName}}
+            {{user.lastName}}
           </td>
           <td>
-            {{users.email}}
+            {{user.email}}
           </td>
           <td>
-            {{users.password}}
+            {{user.password}}
           </td>
           <td>
-            <a href="/station/{{../station._id}}/editprofile/{{_id}}" class="button">
+            <a href="/user/{{user._id}}/edituser" class="button">  
               {{>icons/edit}}
             </a>
           </td>
