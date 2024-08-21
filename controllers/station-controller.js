@@ -3,6 +3,7 @@ import { reportStore } from "../models/report-store.js";
 import { reportAnalytics } from "../utils/report-analytics.js";
 
 export const stationController = {
+  
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
 
@@ -35,7 +36,7 @@ export const stationController = {
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
-    console.log(`adding report ${newReport.title}`);
+    console.log(`adding report to Station ${station._id}`);
     await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
   },

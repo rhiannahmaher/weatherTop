@@ -20,11 +20,11 @@ export const reportController = {
     const reportId = request.params.reportid;
   
     const updatedReport = {
-        code: Number(request.body.code),
-        temperature: Number(request.body.temperature),
-        windSpeed: Number(request.body.windSpeed),
-        windDirection: Number(request.body.windDirection),
-        pressure: Number(request.body.pressure),
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
+      pressure: Number(request.body.pressure),
     };
   
       console.log(`Updating Report ${reportId} from Station ${stationId}`);
