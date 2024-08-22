@@ -33,4 +33,6 @@ router.get("/profile", profileController.index);
 router.get("/user/:userid/edituser", userController.index);
 router.post("/user/:userid/updateuser", userController.update);
 
+router.get('/stations/user/:userid', stationController.sortStations);
+
 

@@ -27,7 +27,13 @@ export const stationController = {
     };
     response.render("station-view", viewData);
   },
-  
+
+  async sortStations(request, response) {
+    const userid = request.params.userid; // Assume user ID comes from the route parameters
+    const stations = await stationStore.getStationsByUserId(userid);
+    response.render('stations-view', stations);
+  },
+
    async addReport(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     const newReport = {

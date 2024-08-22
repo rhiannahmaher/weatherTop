@@ -37,8 +37,19 @@ export const stationStore = {
     await db.write();
   },
   
-  async getStationsByUserId(userid) {
+  async getStationsByUserId(userid) { // built upon pre-existing code to sort by station title (instead of creating new function)
     await db.read();
-    return db.data.stations.filter((station) => station.userid === userid);
+    const stationsByUserId = db.data.stations.filter((station) => station.userid === userid); // function gathers stations associated with userId 
+
+    const sortedStations = stationsByUserId.sort((a, b) => { // ref function
+      if (a.title < b.title) {
+        return -1;
+       }   // `a` comes before `b`
+      if (a.title > b.title) {
+        return 1;
+        }  // `b` comes before `a`
+      return 0; // `a` and `b` are equal
+    });
+    return sortedStations; 
   },
 };
