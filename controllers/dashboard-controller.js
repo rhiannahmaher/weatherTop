@@ -1,21 +1,31 @@
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 import { reportAnalytics } from "../utils/report-analytics.js";
-import { stationController } from "./station-controller.js";
 import { reportStore } from "../models/report-store.js";
 
 export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
-    const station = await stationStore.getStationsByUserId(loggedInUser._id);
+    const stations = await stationStore.getStationsByUserId(loggedInUser._id);
 
-    const report = await reportStore.getReportsByStationId(station._id);
+    // For loop to gather reports for each station
+    for (const station of stations) { // ref
+      const reports = await reportStore.getReportsByStationId(station._id);
+      station.reports = reports;
+
+      station.minTemp = reportAnalytics.getMinTemp(station);
+      station.maxTemp = reportAnalytics.getMaxTemp(station);
+      station.minSpeed = reportAnalytics.getMinSpeed(station);
+      station.maxSpeed = reportAnalytics.getMaxSpeed(station);
+      station.minPressure = reportAnalytics.getMinPressure(station);
+      station.maxPressure = reportAnalytics.getMaxPressure(station);
+    }
 
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: station,
-      report : report,
+      stations: stations, 
     };
+    
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
     console.log(viewData);
