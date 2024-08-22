@@ -1,5 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
+import dayjs from 'dayjs'; // ref
 
 export const reportController = {
   async index(request, response) {
@@ -20,6 +21,7 @@ export const reportController = {
     const reportId = request.params.reportid;
 
     const updatedReport = {
+      time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),

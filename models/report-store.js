@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import dayjs from 'dayjs'; // ref
 
 const db = initStore("reports");
 
@@ -43,12 +44,12 @@ export const reportStore = {
   async updateReport(reportId, updatedReport) {
     const report = await this.getReportById(reportId);
     
+    report.time = dayjs().format('YYYY-MM-DD HH:mm:ss');
     report.code = updatedReport.code;
     report.temperature = updatedReport.temperature;
     report.windSpeed = updatedReport.windSpeed;
     report.windDirection = updatedReport.windDirection;
     report.pressure = updatedReport.pressure;
-
     await db.write();
   }
 

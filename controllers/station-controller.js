@@ -38,7 +38,7 @@ export const stationController = {
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
-    console.log(`adding report to Station ${station._id}`);
+    console.log(`Adding report to Station ${station._id}`);
     await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
   },
@@ -46,7 +46,7 @@ export const stationController = {
   async deleteReport(request, response) {
     const stationId = request.params.stationid;
     const reportId = request.params.reportid;
-    console.log(`Deleting Report ${reportId} from Station ${stationId}`);
+    console.log(`Deleting report ${reportId} from Station ${stationId}`);
     await reportStore.deleteReport(request.params.reportId);
     response.redirect("/station/" + stationId);
   },
