@@ -29,6 +29,13 @@
       "longitude": -89.9,
       "latitude": 11.11,
       "_id": "84a0914f-575a-4845-9d31-87dca5e52816"
+    },
+    {
+      "title": "Croatia",
+      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
+      "longitude": 55,
+      "latitude": 55,
+      "_id": "71c24b64-8c8f-44a1-b4b0-3884f8c2da5b"
     }
   ]
 }

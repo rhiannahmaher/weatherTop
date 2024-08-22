@@ -29,9 +29,9 @@ export const stationController = {
   },
 
   async sortStations(request, response) {
-    const userid = request.params.userid; // Assume user ID comes from the route parameters
+    const userid = request.params.userid; 
     const stations = await stationStore.getStationsByUserId(userid);
-    response.render('stations-view', stations);
+    response.render('station-view', stations);
   },
 
    async addReport(request, response) {

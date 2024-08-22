@@ -1,8 +1,7 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
-  <h2 class="title">
-    {{title}}
-  </h2>
+  {{> list-dashboard-view}}
+  
   <a href="/station/{{_id}}" class="button">
     {{>icons/open}}
   </a>
@@ -12,3 +11,4 @@
 </div>
 {{/each}}
 
+  

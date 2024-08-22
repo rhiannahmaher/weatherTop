@@ -10,6 +10,7 @@ export const dashboardController = {
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
+    console.log(viewData);
   },
 
   async addStation(request, response) {
@@ -32,5 +33,3 @@ export const dashboardController = {
     response.redirect("/dashboard");
   },
 };
-
-
