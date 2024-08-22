@@ -18,7 +18,7 @@ export const reportController = {
   async update(request, response) {
     const stationId = request.params.stationid;
     const reportId = request.params.reportid;
-  
+
     const updatedReport = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
