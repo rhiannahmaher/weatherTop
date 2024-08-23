@@ -19,6 +19,12 @@ export const dashboardController = {
       station.maxSpeed = reportAnalytics.getMaxSpeed(station);
       station.minPressure = reportAnalytics.getMinPressure(station);
       station.maxPressure = reportAnalytics.getMaxPressure(station);
+
+      station.latestReport = reportAnalytics.getLatestReport(station); 
+      station.windDirection = reportAnalytics.getWindDirection(station);
+      station.fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
+      station.weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
+      station.weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
     }
 
     const viewData = {

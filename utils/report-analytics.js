@@ -165,7 +165,6 @@ export const reportAnalytics = {
 
     getWeatherCodeDescription(station) {
 
-
         if (!station.reports) {
             return null; // Return a default message if no reports are available
         }
@@ -315,7 +314,7 @@ export const reportAnalytics = {
             return null; 
         }
 
-        let weatherCodeIcon = latestReport.code;
+        let weatherCodeIcon = latestReport.code; // ref
 
         switch (weatherCodeIcon) {
             case 200:

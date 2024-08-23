@@ -17,7 +17,7 @@
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="https://placehold.co/600x400" alt="Location Tag">
+            {{>icons/location}}
           </p>
         </figure>
       </article>
@@ -32,13 +32,13 @@
           <div class="content">
             <p class="title is-4">Weather</p>
             <p class="subtitle is-6">
-
-              </p>
+              {{weatherCodeDescription}}
+            </p>
           </div>
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="https://placehold.co/600x400" alt="Icon 2">
+            <img src="{{weatherCodeIcon}}" alt="Weather Icon">
           </p>
         </figure>
       </article>
@@ -53,10 +53,10 @@
           <div class="content">
             <p class="title is-4">Temp</p>
             <p class="subtitle is-6">
-              <!-- Current temp --> °C
+              {{latestReport.temperature}} °C
             </p>
             <p class="subtitle is-6">
-              <!-- Current temp --> °F
+             {{fahrenheitTemp}} °F
             </p>
             <p class="subtitle is-6">
               Min: {{minTemp.temperature}}°C
@@ -68,7 +68,7 @@
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="https://placehold.co/600x400" alt="Icon 2">
+            {{>icons/thermometer}}
           </p>
         </figure>
       </article>
@@ -83,10 +83,7 @@
           <div class="content">
             <p class="title is-4">Wind</p>
             <p class="subtitle is-6">
-              <!-- Current speed --> kMh
-            </p>
-            <p class="subtitle is-6">
-              <!-- Current direction: function for degress of 360 --> °
+              {{latestReport.windSpeed}} kMh
             </p>
             <p class="subtitle is-6">
               Min: {{minSpeed.windSpeed}} kMh
@@ -94,11 +91,14 @@
             <p>
               Max: {{maxSpeed.windSpeed}} kMh
             </p>
+            <p class="subtitle is-6">
+              {{windDirection}}
+            </p>
           </div>
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="https://placehold.co/600x400" alt="Icon 3">
+            {{>icons/wind}}
           </p>
         </figure>
       </article>
@@ -113,7 +113,7 @@
           <div class="content">
             <p class="title is-4">Pressure</p>
             <p class="subtitle is-6">
-              <!-- Current pressure --> hPa
+              {{latestReport.pressure}} hPa
             </p>
             <p class="subtitle is-6">
               Min: {{minPressure.pressure}} hPa
@@ -125,7 +125,7 @@
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="https://placehold.co/600x400" alt="Icon 2">
+            {{>icons/barometer}}
           </p>
         </figure>
       </article>

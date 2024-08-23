@@ -38,7 +38,6 @@ export const stationController = {
       weatherCodeIcon : weatherCodeIcon,
     };
     response.render("station-view", viewData);
-    console.log(viewData);
   },
 
   async sortStations(request, response) {
