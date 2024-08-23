@@ -10,10 +10,10 @@
               {{station.title}}
               </p>
             <p class="subtitle is-6">
-              Latitude: {{station.latitude}}
+              Lat: {{station.latitude}}
             </p>
             <p>
-              Longitude: {{station.longitude}}
+              Lng: {{station.longitude}}
             </p>
           </div>
         </div>
@@ -55,6 +55,12 @@
           <div class="content">
             <p class="title is-4">Temp</p>
             <p class="subtitle is-6">
+              {{latestReport.temperature}} °C
+            </p>
+            <p class="subtitle is-6">
+              <!-- Current Weather C -->°F
+            </p>
+            <p class="subtitle is-6">
               Min: {{minTemp.temperature}}°C
             </p>
             <p>
@@ -79,11 +85,18 @@
           <div class="content">
             <p class="title is-4">Wind</p>
             <p class="subtitle is-6">
+              {{latestReport.windSpeed}} kMh
+            </p>
+            <p class="subtitle is-6">
               Min Speed: {{minSpeed.windSpeed}} kMh
             </p>
             <p>
               Max Speed: {{maxSpeed.windSpeed}} kMh
             </p>
+            <p class="subtitle is-6">
+              {{windDirection}}
+            </p>
+            <p class="subtitle is-6">
           </div>
         </div>
         <figure class="media-right">
@@ -102,6 +115,9 @@
         <div class="media-content">
           <div class="content">
             <p class="title is-4">Pressure</p>
+            <p class="subtitle is-6">
+              {{latestReport.pressure}} hPa
+            </p>
             <p class="subtitle is-6">
               Min: {{minPressure.pressure}} hPa
             </p>

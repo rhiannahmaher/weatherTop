@@ -11,8 +11,6 @@
               </p>
             <p class="subtitle is-6">
               Latitude: {{latitude}}
-            </p>
-            <p>
               Longitude: {{longitude}}
             </p>
           </div>
@@ -55,6 +53,12 @@
           <div class="content">
             <p class="title is-4">Temp</p>
             <p class="subtitle is-6">
+              <!-- Current temp --> °C
+            </p>
+            <p class="subtitle is-6">
+              <!-- Current temp --> °F
+            </p>
+            <p class="subtitle is-6">
               Min: {{minTemp.temperature}}°C
             </p>
             <p>
@@ -79,6 +83,12 @@
           <div class="content">
             <p class="title is-4">Wind</p>
             <p class="subtitle is-6">
+              <!-- Current speed --> kMh
+            </p>
+            <p class="subtitle is-6">
+              <!-- Current direction: function for degress of 360 --> °
+            </p>
+            <p class="subtitle is-6">
               Min: {{minSpeed.windSpeed}} kMh
             </p>
             <p>
@@ -102,6 +112,9 @@
         <div class="media-content">
           <div class="content">
             <p class="title is-4">Pressure</p>
+            <p class="subtitle is-6">
+              <!-- Current pressure --> hPa
+            </p>
             <p class="subtitle is-6">
               Min: {{minPressure.pressure}} hPa
             </p>

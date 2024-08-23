@@ -36,6 +36,13 @@
       "longitude": 55,
       "latitude": 55,
       "_id": "71c24b64-8c8f-44a1-b4b0-3884f8c2da5b"
+    },
+    {
+      "title": "Belarus",
+      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
+      "longitude": -78,
+      "latitude": 55,
+      "_id": "a8bf45c7-fa58-42db-8443-7376489d64cc"
     }
   ]
 }
