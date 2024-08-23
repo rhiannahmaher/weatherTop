@@ -95,38 +95,32 @@ export const reportAnalytics = {
     },
 
     getWindDirection(station) {
-        let windDirection = null;
     
-        if (station.reports.length > 0) {
-            windDirection = station.reports[0];
-            let degrees = null;
+        let latestReport = station.reports[0];
     
-            // For loop to compare times of reports and returns most recent
-            for (const report of station.reports) {
-                if (new Date(report.time) > new Date(windDirection.time)) {
-                    windDirection = report;
-
-                    if (degrees >= 337.5 || degrees < 22.5) {
-                        return 'North';
-                    } else if (degrees >= 22.5 && degrees < 67.5) {
-                        return 'North East';
-                    } else if (degrees >= 67.5 && degrees < 112.5) {
-                        return 'East';
-                    } else if (degrees >= 112.5 && degrees < 157.5) {
-                        return 'South East';
-                    } else if (degrees >= 157.5 && degrees < 202.5) {
-                        return 'South';
-                    } else if (degrees >= 202.5 && degrees < 247.5) {
-                        return 'South West';
-                    } else if (degrees >= 247.5 && degrees < 292.5) {
-                        return 'West';
-                    } else if (degrees >= 292.5 && degrees < 337.5) {
-                        return 'North West';
-                    }
-
-                }
+        for (const report of station.reports) {
+            if (new Date(report.time) > new Date(latestReport.time)) {
+                latestReport = report;
             }
         }
-        return windDirection;
-    },
+    
+        let degrees = latestReport.windDirection;
+        if (degrees >= 337.5 || degrees < 22.5) {
+            return 'North';
+        } else if (degrees >= 22.5 && degrees < 67.5) {
+            return 'North East';
+        } else if (degrees >= 67.5 && degrees < 112.5) {
+            return 'East';
+        } else if (degrees >= 112.5 && degrees < 157.5) {
+            return 'South East';
+        } else if (degrees >= 157.5 && degrees < 202.5) {
+            return 'South';
+        } else if (degrees >= 202.5 && degrees < 247.5) {
+            return 'South West';
+        } else if (degrees >= 247.5 && degrees < 292.5) {
+            return 'West';
+        } else if (degrees >= 292.5 && degrees < 337.5) {
+            return 'North West';
+        }
+    }
 };

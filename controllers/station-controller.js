@@ -29,8 +29,7 @@ export const stationController = {
       latestReport: latestReport,
       windDirection: windDirection,
     };
-    response.render("station-view", viewData);
-    console.log(viewData);
+    response.render("station-view", viewData);;
   },
 
   async sortStations(request, response) {
