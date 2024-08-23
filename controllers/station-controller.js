@@ -14,9 +14,12 @@ export const stationController = {
     const maxSpeed = reportAnalytics.getMaxSpeed(station);
     const minPressure = reportAnalytics.getMinPressure(station);
     const maxPressure = reportAnalytics.getMaxPressure(station);
+    
     const latestReport = reportAnalytics.getLatestReport(station); //gets latest report added - works as expected
     const windDirection = reportAnalytics.getWindDirection(station);
     const fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
+    const weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
+    const weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
 
     const viewData = {
       title: "Station", // controls name on chrome tab - want to change to station.tt=itle
@@ -27,11 +30,15 @@ export const stationController = {
       maxSpeed: maxSpeed,
       minPressure: minPressure,
       maxPressure: maxPressure,
+
       latestReport: latestReport,
       windDirection: windDirection,
       fahrenheitTemp: fahrenheitTemp,
+      weatherCodeDescription: weatherCodeDescription,
+      weatherCodeIcon : weatherCodeIcon,
     };
-    response.render("station-view", viewData);;
+    response.render("station-view", viewData);
+    console.log(viewData);
   },
 
   async sortStations(request, response) {
