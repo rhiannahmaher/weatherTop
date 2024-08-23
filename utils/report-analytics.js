@@ -86,7 +86,7 @@ export const reportAnalytics = {
     
             // For loop to compare times of reports and returns most recent
             for (const report of station.reports) {
-                if (new Date(report.time) > new Date(latestReport.time)) {
+                if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                     latestReport = report;
                 }
             }
@@ -99,7 +99,7 @@ export const reportAnalytics = {
         let latestReport = station.reports[0];
     
         for (const report of station.reports) {
-            if (new Date(report.time) > new Date(latestReport.time)) {
+            if (new Date(report.time) > new Date(latestReport.time)) { // ref functio
                 latestReport = report;
             }
         }
@@ -122,5 +122,19 @@ export const reportAnalytics = {
         } else if (degrees >= 292.5 && degrees < 337.5) {
             return 'North West';
         }
+    },
+
+    convertCelciusToFahrenheit(station) {
+
+        let latestReport = station.reports[0];
+
+        for (const report of station.reports) {
+            if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+                latestReport = report;
+            }
+        }
+
+        let fahrenheitTemp = latestReport.temperature;
+        return (fahrenheitTemp * 9/5) + 32; // ref
     }
 };

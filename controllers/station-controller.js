@@ -16,6 +16,7 @@ export const stationController = {
     const maxPressure = reportAnalytics.getMaxPressure(station);
     const latestReport = reportAnalytics.getLatestReport(station); //gets latest report added - works as expected
     const windDirection = reportAnalytics.getWindDirection(station);
+    const fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
 
     const viewData = {
       title: "Station", // controls name on chrome tab - want to change to station.tt=itle
@@ -28,6 +29,7 @@ export const stationController = {
       maxPressure: maxPressure,
       latestReport: latestReport,
       windDirection: windDirection,
+      fahrenheitTemp: fahrenheitTemp,
     };
     response.render("station-view", viewData);;
   },
