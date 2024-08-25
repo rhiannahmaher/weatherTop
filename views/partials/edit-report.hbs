@@ -1,40 +1,40 @@
 <form class="box" action="/station/{{station._id}}/updatereport/{{report._id}}" method="POST">
-  <label>
-    <strong>Report Details:</strong>
+  <label class="title is-4">
+    <strong>Edit Report</strong>
   </label>
-  <div class="field is-horizontal">
+  <div class="field is-horizontal mt-6">
     <div class="field-body">
       <div class="field">
         <label>
           <strong>Weather Code</strong>
         </label>
-        <input class="input" type="text" placeholder="00" name="code" value="{{report.code}}">
+        <input class="input has-background-warning-light" type="text" placeholder="00" name="code" value="{{report.code}}">
       </div>
       <div class="field">
         <label>
           <strong>Temperature</strong>
         </label>
-        <input class="input" type="text" placeholder="00.0°C" name="temperature" value="{{report.temperature}}">
+        <input class="input has-background-warning-light" type="text" placeholder="00.0°C" name="temperature" value="{{report.temperature}}">
       </div>
       <div class="field">
         <label>
           <strong>Wind Speed</strong>
         </label>
-        <input class="input" type="text" placeholder="00.00kMh" name="windSpeed" value="{{report.windSpeed}}">
+        <input class="input has-background-warning-light" type="text" placeholder="00.00kMh" name="windSpeed" value="{{report.windSpeed}}">
       </div>
       <div class="field">
         <label>
           <strong>Wind Direction</strong>
         </label>
-        <input class="input" type="text" placeholder="000deg" name="windDirection" value="{{report.windDirection}}">
+        <input class="input has-background-warning-light" type="text" placeholder="000deg" name="windDirection" value="{{report.windDirection}}">
       </div>
       <div class="field">
         <label>
           <strong>Pressure</strong>
         </label>
-        <input class="input" type="text" placeholder="00.00hPa" name="pressure" value="{{report.pressure}}">
+        <input class="input has-background-warning-light" type="text" placeholder="00.00hPa" name="pressure" value="{{report.pressure}}">
       </div>
     </div>
   </div>
-  <button class="button is-primary">Update Report</button>
+  <button class="button is-warning">Update Report</button>
 </form>

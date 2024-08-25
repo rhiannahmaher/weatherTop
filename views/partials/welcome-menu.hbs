@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar has-background-white-ter mb-6" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     {{> brand}}
   </div>
@@ -6,8 +6,8 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button" id="login" href="/login"> Log in </a>
-          <a class="button" id="signup" href="/signup"> Sign up </a>
+          <a class="button has-background-warning-light" id="login" href="/login"> Log in </a>
+          <a class="button has-background-warning-light" id="signup" href="/signup"> Sign up </a>
         </div>
       </div>
     </div>
@@ -15,5 +15,7 @@
 </nav>
 
 <script>
-  document.getElementById("{{active}}").classList.add("is-primary");
+  var activeElement = document.getElementById("{{active}}"); // changed script to find active id, remove previous colour, and then add new colour
+  activeElement.classList.remove("has-background-warning-light");
+  activeElement.classList.add("has-background-warning");
 </script>

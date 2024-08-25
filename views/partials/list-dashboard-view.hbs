@@ -2,20 +2,20 @@
 
   <!-- Station Location -->
   <div class="column is-one-fifth">
-    <div class="box">
+    <div class="box has-background-white-ter">
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">
+            <p class="title is-4 mb-6">
               {{title}}
               </p>
-            <p class="subtitle is-6">
-              Latitude: {{latitude}}
-              Longitude: {{longitude}}
+            <p class="subtitle has-text-weight-semibold is-6">
+              Lat: {{latitude}} <br>
+              Lng: {{longitude}}
             </p>
           </div>
         </div>
-        <figure class="media-right">
+        <figure class="media-right"> <!-- CSS styling to shift icon to bottom right so that the city name does not run over -->
           <p class="image is-64x64">
             {{>icons/location}}
           </p>
@@ -26,12 +26,14 @@
 
   <!-- Weather Code -->
   <div class="column is-one-fifth">
-    <div class="box">
+    <div class="box has-background-white-ter">
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Weather</p>
-            <p class="subtitle is-6">
+            <p class="title is-4 mb-6">
+              Weather
+            </p>
+            <p class="subtitle has-text-weight-semibold is-6 mb-5">
               {{weatherCodeDescription}}
             </p>
           </div>
@@ -47,22 +49,18 @@
   
   <!-- Temperature -->
   <div class="column is-one-fifth">
-    <div class="box">
+    <div class="box has-background-white-ter">
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Temp</p>
-            <p class="subtitle is-6">
-              {{latestReport.temperature}} °C
+            <p class="title is-4 mb-6">
+              Temp
             </p>
-            <p class="subtitle is-6">
-             {{fahrenheitTemp}} °F
-            </p>
-            <p class="subtitle is-6">
-              Min: {{minTemp.temperature}}°C
-            </p>
-            <p>
-              Max: {{maxTemp.temperature}}°C
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.temperature}}°C <br>
+              {{fahrenheitTemp}}°F <br>
+              Min: {{minTemp.temperature}}°C <br>
+              Max: {{maxTemp.temperature}}°C <br>
             </p>
           </div>
         </div>
@@ -77,22 +75,16 @@
   
   <!-- Wind -->
   <div class="column is-one-fifth">
-    <div class="box">
+    <div class="box has-background-white-ter">
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Wind</p>
-            <p class="subtitle is-6">
-              {{latestReport.windSpeed}} kMh
-            </p>
-            <p class="subtitle is-6">
-              Min: {{minSpeed.windSpeed}} kMh
-            </p>
-            <p>
-              Max: {{maxSpeed.windSpeed}} kMh
-            </p>
-            <p class="subtitle is-6">
-              {{windDirection}}
+            <p class="title is-4 mb-6">Wind</p>
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.windSpeed}} kMh <br>
+              {{windDirection}} <br>
+              Min: {{minSpeed.windSpeed}} kMh <br>
+              Max: {{maxSpeed.windSpeed}} kMh 
             </p>
           </div>
         </div>
@@ -107,18 +99,14 @@
 
     <!-- Pressure -->
   <div class="column is-one-fifth">
-    <div class="box">
+    <div class="box has-background-white-ter">
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Pressure</p>
-            <p class="subtitle is-6">
-              {{latestReport.pressure}} hPa
-            </p>
-            <p class="subtitle is-6">
-              Min: {{minPressure.pressure}} hPa
-            </p>
-            <p>
+            <p class="title is-4 mb-6">Pressure</p>
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.pressure}} hPa <br>
+              Min: {{minPressure.pressure}} hPa <br>
               Max: {{maxPressure.pressure}} hPa
             </p>
           </div>

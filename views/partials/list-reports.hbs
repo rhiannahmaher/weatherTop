@@ -6,18 +6,16 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">
+            <p class="title is-4 mb-6">
               {{station.title}}
               </p>
-            <p class="subtitle is-6">
-              Lat: {{station.latitude}}
-            </p>
-            <p>
+            <p class="subtitle has-text-weight-semibold is-6">
+              Lat: {{station.latitude}} <br>
               Lng: {{station.longitude}}
             </p>
           </div>
         </div>
-        <figure class="media-right">
+        <figure class="media-right"> <!-- CSS styling to shift icon to bottom right so that the city name does not run over -->
           <p class="image is-64x64">
             {{>icons/location}}
           </p>
@@ -32,8 +30,10 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Weather</p>
-            <p class="subtitle is-6">
+            <p class="title is-4 mb-6">
+              Weather
+            </p>
+            <p class="subtitle has-text-weight-semibold is-6">
               {{weatherCodeDescription}}
             </p>
           </div>
@@ -53,17 +53,13 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Temp</p>
-            <p class="subtitle is-6">
-              {{latestReport.temperature}} °C
+            <p class="title is-4 mb-6">
+              Temp
             </p>
-            <p class="subtitle is-6">
-              {{fahrenheitTemp}} °F
-            </p>
-            <p class="subtitle is-6">
-              Min: {{minTemp.temperature}}°C
-            </p>
-            <p>
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.temperature}}°C <br>
+              {{fahrenheitTemp}}°F <br>
+              Min: {{minTemp.temperature}}°C <br>
               Max: {{maxTemp.temperature}}°C
             </p>
           </div>
@@ -83,18 +79,14 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Wind</p>
-            <p class="subtitle is-6">
-              {{latestReport.windSpeed}} kMh
+            <p class="title is-4 mb-6">
+              Wind
             </p>
-            <p class="subtitle is-6">
-              Min Speed: {{minSpeed.windSpeed}} kMh
-            </p>
-            <p>
-              Max Speed: {{maxSpeed.windSpeed}} kMh
-            </p>
-            <p class="subtitle is-6">
-              {{windDirection}}
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.windSpeed}} kMh <br>
+              {{windDirection}} <br>
+              Min: {{minSpeed.windSpeed}} kMh <br>
+              Max: {{maxSpeed.windSpeed}} kMh
             </p>
             <p class="subtitle is-6">
           </div>
@@ -114,15 +106,13 @@
       <article class="media">
         <div class="media-content">
           <div class="content">
-            <p class="title is-4">Pressure</p>
-            <p class="subtitle is-6">
-              {{latestReport.pressure}} hPa
+            <p class="title is-4 mb-6">
+              Pressure
             </p>
-            <p class="subtitle is-6">
-              Min: {{minPressure.pressure}} hPa
-            </p>
-            <p>
-              Max: {{maxPressure.pressure}} hPa
+            <p class="subtitle has-text-weight-semibold is-6">
+              {{latestReport.pressure}} hPa <br>
+              Min: {{minPressure.pressure}} hPa <br>
+              Max: {{maxPressure.pressure}} hPa 
             </p>
           </div>
         </div>
@@ -136,7 +126,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="box box-link-hover-shadow">
   <div class="table-container">
     <table class="table is-fullwidth">
       <thead>
@@ -171,12 +161,12 @@
             {{pressure}}
           </td>
           <td>
-            <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button"> 
+            <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button has-background-warning-light"> 
               {{>icons/edit}}
             </a>
           </td>
           <td>
-            <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button">
+            <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button has-background-warning-light">
               {{>icons/delete}}
             </a>
           </td>

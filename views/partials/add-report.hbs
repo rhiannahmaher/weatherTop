@@ -1,23 +1,40 @@
-<form class="box" action="/station/{{station._id}}/addreport" method="POST">
-  <label>Enter Report Details:</label>
-  <div class="field is-horizontal">
+<form class="box box-link-hover-shadow" action="/station/{{station._id}}/addreport" method="POST">
+  <label class="title is-4">
+    <strong>Add Report</strong>
+    </label>
+  <div class="field is-horizontal mt-6">
     <div class="field-body">
       <div class="field">
-        <input class="input" type="text" placeholder="00" name="code">
+        <p>
+          <strong>Weather Code</strong>
+        </p>
+        <input class="input has-background-warning-light" type="text" placeholder="00" name="code">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="00.0°C" name="temperature">
+        <p>
+          <strong>Temperature</strong>
+        </p>
+        <input class="input has-background-warning-light" type="text" placeholder="00.0°C" name="temperature">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="00.00kMh" name="windSpeed">
+        <p>
+          <strong>Wind Speed</strong>
+        </p>
+        <input class="input has-background-warning-light" type="text" placeholder="00.00kMh" name="windSpeed">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="000deg" name="windDirection">
+        <p>
+          <strong>Wind Direction</strong>
+        </p>
+        <input class="input has-background-warning-light" type="text" placeholder="000deg" name="windDirection">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="00.00hPa" name="pressure">
+        <p>
+          <strong>Pressure</strong>
+        </p>
+        <input class="input has-background-warning-light" type="text" placeholder="00.00hPa" name="pressure">
       </div>
     </div>
   </div>
-  <button class="button is-primary">Add Report</button>
+  <button class="button has-background-warning">Add Report</button>
 </form>

@@ -22,7 +22,7 @@ export const stationController = {
     const weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
 
     const viewData = {
-      title: "Station", // controls name on chrome tab - want to change to station.tt=itle
+      title: station.title,
       station: station,
       minTemp: minTemp,
       maxTemp: maxTemp,
