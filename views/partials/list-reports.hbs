@@ -128,9 +128,9 @@
 
 <div class="box box-link-hover-shadow">
   <div class="table-container">
-    <table class="table is-fullwidth">
+    <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
       <thead>
-        <tr>
+        <tr class="has-background-warning-light has-text-weight-bold">
           <th>Date/Time</th>
           <th>Weather Code</th>
           <th>Temperature</th>
@@ -142,31 +142,19 @@
       <tbody>
         {{#each station.reports}}
         <tr>
-          <td>
-            {{time}}
-          </td>
-          <td>
-            {{code}}
-          </td>
-          <td>
-            {{temperature}}
-          </td>
-          <td>
-            {{windSpeed}}
-          </td>
-          <td>
-            {{windDirection}}
-          </td>
-          <td>
-            {{pressure}}
-          </td>
-          <td>
-            <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button has-background-warning-light"> 
+          <td>{{time}}</td>
+          <td>{{code}}</td>
+          <td>{{temperature}}</td>
+          <td>{{windSpeed}}</td>
+          <td>{{windDirection}}</td>
+          <td>{{pressure}}</td>
+          <td class="has-text-centered">
+            <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button is-small has-background-warning-light is-hovered"> 
               {{>icons/edit}}
             </a>
           </td>
-          <td>
-            <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button has-background-warning-light">
+          <td class="has-text-centered">
+            <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button is-small has-background-warning-light is-hovered">
               {{>icons/delete}}
             </a>
           </td>
@@ -176,3 +164,4 @@
     </table>
   </div>
 </div>
+

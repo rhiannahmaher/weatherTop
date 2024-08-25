@@ -1,14 +1,19 @@
 <nav class="navbar has-background-white-ter mb-6">
   <div class="navbar-brand">
     {{> brand}}
+    <span class="navbar-burger has-background-white-ter" data-target="navMenu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </span>
   </div>
-  <div class="navbar-menu" id="navMenu">
+  <div class="navbar-menu has-background-white-ter" id="navMenu">
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <a id="dashboard" class="button has-background-warning-light" href="/dashboard"> Dashboard </a>
-          <a id="about" class="button has-background-warning-light" href="/about"> About </a>
           <a id="profile" class="button has-background-warning-light" href="/profile"> Profile </a>
+          <a id="about" class="button has-background-warning-light" href="/about"> About </a>
           <a id="logout" class="button has-background-warning-light" href="/logout"> Logout </a>
         </div>
       </div>

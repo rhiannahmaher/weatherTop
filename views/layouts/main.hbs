@@ -6,7 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="public/css/stylesheet.css"/>
+
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+  
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+  
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+  
+      });
+    });
+  
+  });
+  </script>
 </head>
 
 <body class="has-background-white-ter">
