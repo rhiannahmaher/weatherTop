@@ -12,3 +12,20 @@
 table .button-cell {
     border: none;
 }
+
+.hidden-password {
+    opacity: 0; 
+}
+
+.password {
+    display: block; 
+  }
+
+.password-container:hover .hidden-password {
+opacity: 1; 
+}
+
+.password-container:hover .password {
+display: none; 
+}
+

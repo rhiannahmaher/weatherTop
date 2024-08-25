@@ -10,11 +10,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="password-container">
           <td>{{user.firstName}}</td>
           <td>{{user.lastName}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.password}}</td>
+          <td>
+            <span class="password is-italic has-text-weight-semibold">Hover to Reveal</span>
+            <span class="hidden-password">{{user.password}}</span> 
+          </td>
           <td class="button-cell has-text-centered">
             <a href="/user/{{user._id}}/edituser" class="button">  
               {{>icons/edit}}
