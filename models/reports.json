@@ -119,6 +119,16 @@
       "pressure": 3,
       "_id": "62983654-f0bf-43a8-9741-8f1c3062b128",
       "stationid": "6795302b-71c3-4d3c-90d0-f1c1bd79a892"
+    },
+    {
+      "time": "2024-08-25 19:41:51",
+      "code": 300,
+      "temperature": 44,
+      "windSpeed": 44,
+      "windDirection": 44,
+      "pressure": 44,
+      "_id": "ad933faa-7a3d-4495-a10c-b6735f11f2c0",
+      "stationid": "09b56fe4-a4e2-4fae-bc16-90159ca6e3b1"
     }
   ]
 }

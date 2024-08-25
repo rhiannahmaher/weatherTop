@@ -36,13 +36,15 @@ export const accountsController = {
 
   async authenticate(request, response) {
     const user = await userStore.getUserByEmail(request.body.email);
-    if (user) {
-      response.cookie("station", user.email);
-      console.log(`logging in ${user.email}`);
-      response.redirect("/dashboard");
-    } else {
-      response.redirect("/login");
-    }
+    if (user) { 
+      if (user.password === request.body.password) { // Updated to include password functionality
+        response.cookie("station", user.email);
+        console.log(`logging in ${user.email}`);
+        response.redirect("/dashboard");
+      } else {
+          response.redirect("/login");
+        }
+      }
   },
 
   async getLoggedInUser(request) {
