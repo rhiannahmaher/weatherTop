@@ -1,7 +1,12 @@
 export const reportAnalytics = {
 
     getMinTemp(station) {
-        let minTemp = null;
+
+        if (!station.reports) {
+            return "No Data";
+        }
+
+        let minTemp = station.reports[0]; // had to change from null as it was causing error
         if (station.reports.length > 0) {
             minTemp = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -10,11 +15,21 @@ export const reportAnalytics = {
                 }
             }
         }
-        return minTemp;
+
+        if (minTemp && minTemp.temperature !== undefined) { // accounts for if there are no reports
+            return `${minTemp.temperature}°C`;
+        } else {
+            return "No Data"; 
+        }
     },
 
     getMaxTemp(station) {
-        let maxTemp = null;
+
+        if (!station.reports) {
+            return "No Data";
+        }
+        
+        let maxTemp = station.reports[0];
         if (station.reports.length > 0) {
             maxTemp = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -23,11 +38,21 @@ export const reportAnalytics = {
                 }
             }
         }
-        return maxTemp;
+
+        if (maxTemp && maxTemp.temperature !== undefined) {
+            return `${maxTemp.temperature}°C`;
+        } else {
+            return "No Data"; 
+        }
     },
 
     getMinSpeed(station) {
-        let minSpeed = null;
+
+        if (!station.reports) {
+            return "No Data";
+        }
+
+        let minSpeed = station.reports[0];
         if (station.reports.length > 0) {
             minSpeed = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -36,11 +61,21 @@ export const reportAnalytics = {
                 }
             }
         }
-        return minSpeed;
+
+        if (minSpeed && minSpeed.windSpeed !== undefined) {
+            return `${minSpeed.windSpeed} kMh`;
+        } else {
+            return "No Data"; 
+        }
     },
 
     getMaxSpeed(station) {
-        let maxSpeed = null;
+
+        if (!station.reports) {
+            return "No Data";
+        }
+
+        let maxSpeed = station.reports[0];
         if (station.reports.length > 0) {
             maxSpeed = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -49,11 +84,21 @@ export const reportAnalytics = {
                 }
             }
         }
-        return maxSpeed;
+
+        if (maxSpeed && maxSpeed.windSpeed !== undefined) {
+            return `${maxSpeed.windSpeed} kMh`;
+        } else {
+            return "No Data"; 
+        }
     },
 
     getMinPressure(station) {
-        let minPressure = null;
+
+        if (!station.reports) {
+            return "no data";
+        }
+
+        let minPressure = station.reports[0];
         if (station.reports.length > 0) {
             minPressure = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -62,11 +107,22 @@ export const reportAnalytics = {
                 }
             }
         }
-        return minPressure;
+
+        if (minPressure && minPressure.pressure !== undefined) {
+            return `${minPressure.pressure} hPa`;
+        } else {
+            return "No Data"; 
+            
+        }
     },
 
     getMaxPressure(station) {
-        let maxPressure = null;
+
+        if (!station.reports) {
+            return "No data";
+        }
+
+        let maxPressure = station.reports[0];
         if (station.reports.length > 0) {
             maxPressure = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
@@ -75,7 +131,12 @@ export const reportAnalytics = {
                 }
             }
         }
-        return maxPressure;
+
+        if (maxPressure && maxPressure.pressure !== undefined) {
+            return `${maxPressure.pressure} hPa`;
+        } else {
+            return "No Data"; 
+        }
     },
 
     getLatestReport(station) {
@@ -84,8 +145,7 @@ export const reportAnalytics = {
             return null;
         }
 
-        let latestReport = null;
-    
+        let latestReport = station.reports[0];
         if (station.reports.length > 0) {
             latestReport = station.reports[0];
     
@@ -96,7 +156,24 @@ export const reportAnalytics = {
                 }
             }
         }
-        return latestReport;
+
+        if (latestReport !== undefined) {
+            return latestReport;
+        } else {
+            return null; 
+        }
+    },
+
+    getCurrentTemp(currentTemp, unit) {
+        return `${currentTemp}${unit}`;
+    },
+
+    getCurrentSpeed(currentSpeed, unit) {
+        return `${currentSpeed} ${unit}`;
+    },
+
+    getCurrentPressure(currentPressure, unit) {
+        return `${currentPressure} ${unit}`;
     },
 
     getWindDirection(station) {
@@ -144,23 +221,22 @@ export const reportAnalytics = {
     convertCelciusToFahrenheit(station) {
 
         if (!station.reports) {
-            return null;
+            return "No Data";
         }
 
         let latestReport = station.reports[0];
-
         for (const report of station.reports) {
             if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                 latestReport = report;
             }
         }
 
-        if (!latestReport) {
-            return null; // Return a default message if temperature is not available
+        if (latestReport) {
+            const fahrenheitTemp = (latestReport.temperature * 9/5) + 32;
+            return `${fahrenheitTemp}°F`; 
+        } else {
+            return "No Data";
         }
-
-        let fahrenheitTemp = latestReport.temperature;
-        return (fahrenheitTemp * 9/5) + 32; // ref
     },
 
     getWeatherCodeDescription(station) {

@@ -21,10 +21,26 @@ export const dashboardController = {
       station.maxPressure = reportAnalytics.getMaxPressure(station);
 
       station.latestReport = reportAnalytics.getLatestReport(station); 
+
       station.windDirection = reportAnalytics.getWindDirection(station);
       station.fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
       station.weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
       station.weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
+
+      // If statement to account for if there are no reports available
+      if (station.latestReport) { 
+        station.currentTemp = station.latestReport.temperature;
+        station.currentSpeed = station.latestReport.windSpeed;
+        station.currentPressure = station.latestReport.pressure;
+        
+        station.currentTempWithUnit = reportAnalytics.getCurrentTemp(station.currentTemp, '°C');
+        station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "kMh");
+        station.currentPressureWithUnit = reportAnalytics.getCurrentPressure(station.currentPressure, "hPa");
+      } else {
+        station.currentTempWithUnit = "No Data";
+        station.currentSpeedWithUnit = "No Data";
+        station.currentPressureWithUnit = "No Data";
+      }
     }
 
     const viewData = {

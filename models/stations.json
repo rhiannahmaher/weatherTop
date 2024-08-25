@@ -21,14 +21,16 @@
     {
       "title": "Kilkenny",
       "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "_id": "eaeaa3a2-58b0-446e-944b-2d4a340ebbc9"
+      "longitude": -98.34,
+      "latitude": 22.43,
+      "_id": "138f9ba3-8138-4e1e-92cf-19d91f18d6d7"
     },
     {
-      "title": "Berlin",
+      "title": "Belarus",
       "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -89.9,
-      "latitude": 11.11,
-      "_id": "84a0914f-575a-4845-9d31-87dca5e52816"
+      "longitude": 67,
+      "latitude": null,
+      "_id": "6795302b-71c3-4d3c-90d0-f1c1bd79a892"
     }
   ]
 }

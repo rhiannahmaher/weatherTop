@@ -15,7 +15,22 @@ export const stationController = {
     const minPressure = reportAnalytics.getMinPressure(station);
     const maxPressure = reportAnalytics.getMaxPressure(station);
     
-    const latestReport = reportAnalytics.getLatestReport(station); //gets latest report added - works as expected
+    const latestReport = reportAnalytics.getLatestReport(station); //gets latest report added 
+    
+    let currentTempWithUnit = "No Data"; // review
+    let currentSpeedWithUnit = "No Data";
+    let currentPressureWithUnit = "No Data";
+
+    if (latestReport) { // accounts for if reports are empty
+      const currentTemp = latestReport.temperature;
+      const currentSpeed = latestReport.windSpeed;
+      const currentPressure = latestReport.pressure;
+
+      currentTempWithUnit = reportAnalytics.getCurrentTemp(currentTemp, "°C");
+      currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(currentSpeed, "kMh");
+      currentPressureWithUnit = reportAnalytics.getCurrentPressure(currentPressure, "hPa");
+    }
+
     const windDirection = reportAnalytics.getWindDirection(station);
     const fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
     const weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
@@ -32,6 +47,10 @@ export const stationController = {
       maxPressure: maxPressure,
 
       latestReport: latestReport,
+      currentTempWithUnit: currentTempWithUnit,
+      currentSpeedWithUnit: currentSpeedWithUnit,
+      currentPressureWithUnit: currentPressureWithUnit,
+
       windDirection: windDirection,
       fahrenheitTemp: fahrenheitTemp,
       weatherCodeDescription: weatherCodeDescription,

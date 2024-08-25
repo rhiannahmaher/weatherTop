@@ -23,6 +23,5 @@ export const userController = {
           console.log(`Updating User ${userId}`);
           await userStore.updateUser(userId, updatedUser); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
           response.redirect("/profile"); 
-          console.log(updatedUser); // this is printing to console correctly
       }
 }

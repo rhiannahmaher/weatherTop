@@ -57,10 +57,10 @@
               Temp
             </p>
             <p class="subtitle has-text-weight-semibold is-6">
-              {{latestReport.temperature}}°C <br>
-              {{fahrenheitTemp}}°F <br>
-              Min: {{minTemp.temperature}}°C <br>
-              Max: {{maxTemp.temperature}}°C
+              {{currentTempWithUnit}} <br>
+              {{fahrenheitTemp}} <br>
+              Min: {{minTemp}} <br>
+              Max: {{maxTemp}}
             </p>
           </div>
         </div>
@@ -83,10 +83,10 @@
               Wind
             </p>
             <p class="subtitle has-text-weight-semibold is-6">
-              {{latestReport.windSpeed}} kMh <br>
+              {{currentSpeedWithUnit}} <br>
               {{windDirection}} <br>
-              Min: {{minSpeed.windSpeed}} kMh <br>
-              Max: {{maxSpeed.windSpeed}} kMh
+              Min: {{minSpeed}} <br>
+              Max: {{maxSpeed}}
             </p>
             <p class="subtitle is-6">
           </div>
@@ -110,9 +110,9 @@
               Pressure
             </p>
             <p class="subtitle has-text-weight-semibold is-6">
-              {{latestReport.pressure}} hPa <br>
-              Min: {{minPressure.pressure}} hPa <br>
-              Max: {{maxPressure.pressure}} hPa 
+              {{currentPressureWithUnit}} <br>
+              Min: {{minPressure}} <br>
+              Max: {{maxPressure}} 
             </p>
           </div>
         </div>
