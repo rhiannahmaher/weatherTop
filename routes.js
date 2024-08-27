@@ -22,6 +22,7 @@ router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
 
 router.get("/station/:id", stationController.index);
 router.post("/station/:id/addreport", stationController.addReport);
+router.post('/station/:stationid/report/:reportid', reportController.deletedReport);
 router.get("/station/:stationid/deletereport/:reportid", stationController.deleteReport);
 router.get("/about", aboutController.index);
 
@@ -34,6 +35,7 @@ router.get("/user/:userid/edituser", userController.index);
 router.post("/user/:userid/updateuser", userController.update);
 
 router.get('/stations/user/:userid', stationController.sortStations);
+
 
 
 

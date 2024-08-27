@@ -32,5 +32,14 @@ export const reportController = {
       console.log(`Updating Report ${reportId} from Station ${stationId}`);
       await reportStore.updateReport(reportId, updatedReport); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
       response.redirect("/station/" + stationId);
+  },
+
+  async deletedReport(request, response) {
+    const stationId = request.params.stationid;
+    const reportId = request.params.reportid;
+    const deletedReport = await reportStore.deleteReport(reportId);
+    console.log(`Deleting Report ${reportId} from Station ${stationId}`);
+    await reportStore.deleteReport(reportId, deletedReport);
+    response.redirect("/station/" + stationId);
   }
 };

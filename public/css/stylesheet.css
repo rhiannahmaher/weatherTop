@@ -13,19 +13,24 @@ table .button-cell {
     border: none;
 }
 
+.password-container {
+    position: relative;
+}
+
 .hidden-password {
-    opacity: 0; 
+    visibility: hidden; 
 }
 
 .password {
-    display: block; 
+    display: inline; 
   }
 
 .password-container:hover .hidden-password {
-opacity: 1; 
+    visibility: visible;
+    left: 0;
 }
 
 .password-container:hover .password {
-display: none; 
+    visibility: hidden;
 }
 

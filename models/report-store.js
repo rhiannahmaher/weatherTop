@@ -36,9 +36,10 @@ export const reportStore = {
     await db.write();
   },
 
-  async deleteAllReports() {
-    db.data.reports = [];
-    await db.write();
+  async deleteAllReports(stationId) {
+    await db.read(); 
+    db.data.reports = db.data.reports.filter(report => report.stationid !== stationId); // ref filter function
+    await db.write(); 
   },
 
   async updateReport(reportId, updatedReport) {
@@ -52,5 +53,4 @@ export const reportStore = {
     report.pressure = updatedReport.pressure;
     await db.write();
   }
-
 };

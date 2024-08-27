@@ -154,9 +154,11 @@
             </a>
           </td>
           <td class="button-cell has-text-centered">
-            <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button is-small has-background-warning-light">
-              {{>icons/delete}}
-            </a>
+            <form action="/station/{{stationId}}/report/{{reportId}}" method="POST"> <!-- ref for method=dleted -->
+              <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button is-small has-background-warning-light">
+                {{>icons/delete}}
+              </a>
+            </form>
           </td>
         </tr>
         {{/each}}

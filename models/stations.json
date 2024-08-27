@@ -2,35 +2,11 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "Kilkenny",
-      "_id": "7a7e128c-c289-4762-b678-66b628f5e61c"
-    },
-    {
-      "title": "Waterford",
-      "_id": "49f39594-14f1-4e66-8748-b66b6b4bcd82"
-    },
-    {
-      "title": "Galway",
-      "_id": "14cb66b3-bbd8-4616-9fbf-ad8a4ed871f3"
-    },
-    {
-      "title": "Galway",
-      "userid": "543dc726-393b-4292-9e49-28235010a00c",
-      "_id": "09b56fe4-a4e2-4fae-bc16-90159ca6e3b1"
-    },
-    {
-      "title": "Kilkenny",
+      "title": "Kilkenny ",
       "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -98.34,
-      "latitude": 22.43,
-      "_id": "138f9ba3-8138-4e1e-92cf-19d91f18d6d7"
-    },
-    {
-      "title": "Belarus",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": 67,
-      "latitude": null,
-      "_id": "6795302b-71c3-4d3c-90d0-f1c1bd79a892"
+      "longitude": 1,
+      "latitude": 1,
+      "_id": "b6f4998f-9cb0-4231-a27b-6e0b502173b1"
     }
   ]
 }

@@ -31,7 +31,7 @@ export const accountsController = {
     const user = request.body;
     await userStore.addUser(user);
     console.log(`registering ${user.email}`);
-    response.redirect("/");
+    response.redirect("/login");
   },
 
   async authenticate(request, response) {
@@ -44,6 +44,8 @@ export const accountsController = {
       } else {
           response.redirect("/login");
         }
+      } else {
+        response.redirect("/login");
       }
   },
 

@@ -66,9 +66,11 @@ export const dashboardController = {
   },
   
   async deleteStation(request, response) {
-    const stationId = request.params.id;
+    const stationId = request.params.id;  
     console.log(`Deleting Station ${stationId}`);
-    await stationStore.deleteStationById(stationId);
+
+    await reportStore.deleteAllReports(stationId); // Deletes reports associated with station id first
+    await stationStore.deleteStationById(stationId); // Station then deleted
     response.redirect("/dashboard");
   },
 };
