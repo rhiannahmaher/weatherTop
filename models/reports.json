@@ -1,4 +1,147 @@
 {
   "file": "./models/reports.json",
-  "reports": []
+  "reports": [
+    {
+      "time": "2024-08-28 12:54:13",
+      "code": 800,
+      "temperature": 2,
+      "windSpeed": 2,
+      "windDirection": 2,
+      "pressure": 2,
+      "_id": "3f9a211e-0aff-446b-9d7b-aee2b5587488",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 16:42:11",
+      "code": 300,
+      "temperature": 2,
+      "windSpeed": 2,
+      "windDirection": 2,
+      "pressure": 2,
+      "_id": "0204ab7e-bdf5-4d26-8eea-1dc0c0de472b",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 16:45:30",
+      "code": 0,
+      "temperature": 0,
+      "windSpeed": 0,
+      "windDirection": 0,
+      "pressure": 0,
+      "_id": "b72cc766-eab6-4ec3-b1d4-09c3d39ebd4f",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 16:45:41",
+      "code": 2,
+      "temperature": 2,
+      "windSpeed": 2,
+      "windDirection": 2,
+      "pressure": 2,
+      "_id": "f3d206b2-fc48-4a7a-bba2-411dddaf01b4",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 16:45:57",
+      "code": 600,
+      "temperature": 1,
+      "windSpeed": 1,
+      "windDirection": 1,
+      "pressure": 1,
+      "_id": "7c694814-df42-4d06-9042-38d6c7f871c7",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 17:23:00",
+      "code": 600,
+      "temperature": 1,
+      "windSpeed": 1,
+      "windDirection": 1,
+      "pressure": 1,
+      "_id": "a62f9e54-0292-4fdb-af5f-fc3494fdcf52",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 17:27:44",
+      "code": 803,
+      "temperature": 19.2,
+      "windSpeed": 3.13,
+      "windDirection": 299,
+      "pressure": 1010,
+      "_id": "e77efdc6-4111-4aba-b64c-9af0597af5b3",
+      "stationid": "3ea46595-911e-4ba1-9faf-0454680369c2"
+    },
+    {
+      "time": "2024-08-28 17:27:58",
+      "code": 803,
+      "temperature": 19.2,
+      "windSpeed": 3.13,
+      "windDirection": 299,
+      "pressure": 1010,
+      "_id": "eec0ef61-11fa-4ce8-aefc-e5504751d6af",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "time": "2024-08-28 17:31:55",
+      "code": 803,
+      "temperature": 18.81,
+      "windSpeed": 3.58,
+      "windDirection": 286,
+      "pressure": 1010,
+      "_id": "e19d2200-6905-4eb4-bd3c-3b1b7fe01d02",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "time": "2024-08-28 17:37:09",
+      "code": 802,
+      "temperature": 18.8,
+      "windSpeed": 5.36,
+      "windDirection": 291,
+      "pressure": 1010,
+      "_id": "d7ed122b-cafd-4ccf-a505-ed3082d94dc2",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "time": "2024-08-28 17:38:42",
+      "code": 802,
+      "temperature": 18.8,
+      "windSpeed": 5.36,
+      "windDirection": 291,
+      "pressure": 1010,
+      "_id": "951dc266-3c20-4c6b-91b1-389dd519bd24",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "time": "2024-08-28 17:43:58",
+      "code": 800,
+      "temperature": 14.74,
+      "windSpeed": 8.22,
+      "windDirection": 240,
+      "pressure": 1010,
+      "_id": "3daa38e6-a220-4d51-9466-175991858838",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "time": "2024-08-28 18:11:06",
+      "code": 800,
+      "temperature": 14.74,
+      "windSpeed": 8.22,
+      "windDirection": 240,
+      "pressure": 1010,
+      "_id": "cc9038fc-2d22-4ea2-88e5-e518061562fe",
+      "stationid": "1ef56208-d914-47ec-a3c5-046fd82448a3"
+    },
+    {
+      "latitude": 42.7023,
+      "longitude": -83.4027,
+      "time": "2024-08-28 18:24:32",
+      "code": 804,
+      "temperature": 26.04,
+      "windSpeed": 3.09,
+      "windDirection": 0,
+      "pressure": 1017,
+      "_id": "5200f7ea-45b9-4d54-b624-dc0b8fe3e0eb",
+      "stationid": "590ad78a-bf55-4ddd-9507-84d42aa02f8e"
+    }
+  ]
 }

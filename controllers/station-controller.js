@@ -2,6 +2,9 @@ import { stationStore } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
 import { reportAnalytics } from "../utils/report-analytics.js";
 import dayjs from 'dayjs'; // ref
+import axios from "axios";
+
+const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kilkenny,Ireland&units=metric&appid=88b0f3b6a4a702ccaa37e880cde9b82f`;
 
 export const stationController = {
   
@@ -59,26 +62,62 @@ export const stationController = {
     response.render("station-view", viewData);
   },
 
+  // This needs to be in dashboard-controller
   async sortStations(request, response) {
     const userid = request.params.userid; 
     const stations = await stationStore.getStationsByUserId(userid);
     response.render('station-view', stations);
   },
 
-   async addReport(request, response) {
+  async addReport(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-    const newReport = {
-      time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-      code: Number(request.body.code),
-      temperature: Number(request.body.temperature),
-      windSpeed: Number(request.body.windSpeed),
-      windDirection: Number(request.body.windDirection),
-      pressure: Number(request.body.pressure),
-    };
-    console.log(`Adding report to Station ${station._id}`);
-    await reportStore.addReport(station._id, newReport);
-    response.redirect("/station/" + station._id);
-  },
+    const city = station.title;
+
+    if (request.body.autoGenerate === 'false') {
+      // Manually generate report
+      const newReport = {
+        time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+        code: Number(request.body.code),
+        temperature: Number(request.body.temperature),
+        windSpeed: Number(request.body.windSpeed),
+        windDirection: Number(request.body.windDirection),
+        pressure: Number(request.body.pressure),
+      };
+      console.log(`Adding report to Station ${station._id}`);
+      await reportStore.addReport(station._id, newReport);
+      response.redirect("/station/" + station._id);
+    } 
+    else {
+      // Auto generate report
+      console.log("Auto-generating new report");
+        let report = {};
+
+        const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=88b0f3b6a4a702ccaa37e880cde9b82f`; // Replace with your actual URL
+        const result = await axios.get(weatherRequestUrl);
+
+        if (result.status === 200) {
+            const currentWeather = result.data;
+
+            const latitude = station.latitude;
+            // work on if statement for latutude and longitude --> const latitude = station.latitude | 
+            report = {
+                latitude: currentWeather.coord.lat,
+                longitude: currentWeather.coord.lon,
+                time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+                code: currentWeather.weather[0].id, 
+                temperature: currentWeather.main.temp,
+                windSpeed: currentWeather.wind.speed,
+                windDirection: currentWeather.wind.deg,
+                pressure: currentWeather.main.pressure,
+            };
+            console.log(report);
+            await reportStore.addReport(station._id, report);
+            response.redirect("/station/" + station._id);
+        } else {
+            console.error("Failed to retrieve weather data", result.status);
+        }
+      }
+    },
 
   async deleteReport(request, response) {
     const stationId = request.params.stationid;
