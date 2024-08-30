@@ -4,17 +4,17 @@ import { initStore } from "../utils/store-utils.js";
 const db = initStore("users");
 
 export const userStore = {
-  async getAllUsers() {
-    await db.read();
-    return db.data.users;
-  },
-
   async addUser(user) {
     await db.read();
     user._id = v4();
     db.data.users.push(user);
     await db.write();
     return user;
+  },
+
+  async getAllUsers() {
+    await db.read();
+    return db.data.users;
   },
 
   async getUserById(id) {
@@ -27,6 +27,15 @@ export const userStore = {
     return db.data.users.find((user) => user.email === email);
   },
 
+  async updateUser(userId, updatedUser) {
+    const user = await this.getUserById(userId);
+    user.firstName = updatedUser.firstName;
+    user.lastName = updatedUser.lastName;
+    user.email = updatedUser.email;
+    user.password = updatedUser.password;
+    await db.write();
+  },
+
   async deleteUserById(id) {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);
@@ -36,17 +45,6 @@ export const userStore = {
 
   async deleteAll() {
     db.data.users = [];
-    await db.write();
-  },
-
-  async updateUser(userId, updatedUser) {
-    const user = await this.getUserById(userId);
-    
-    user.firstName = updatedUser.firstName;
-    user.lastName = updatedUser.lastName;
-    user.email = updatedUser.email;
-    user.password = updatedUser.password;
-    
     await db.write();
   }
 };

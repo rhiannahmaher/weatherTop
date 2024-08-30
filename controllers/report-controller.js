@@ -4,7 +4,6 @@ import dayjs from 'dayjs'; // ref
 
 export const reportController = {
   async index(request, response) {
-
     const stationId = request.params.stationid;
     const reportId = request.params.reportid;
     console.log(`Editing Report ${reportId} from Station ${stationId}`);
@@ -19,7 +18,6 @@ export const reportController = {
   async update(request, response) {
     const stationId = request.params.stationid;
     const reportId = request.params.reportid;
-
     const updatedReport = {
       time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
       code: Number(request.body.code),
@@ -28,10 +26,9 @@ export const reportController = {
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
     };
-  
-      console.log(`Updating Report ${reportId} from Station ${stationId}`);
-      await reportStore.updateReport(reportId, updatedReport); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
-      response.redirect("/station/" + stationId);
+    console.log(`Updating Report ${reportId} from Station ${stationId}`);
+    await reportStore.updateReport(reportId, updatedReport); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
+    response.redirect("/station/" + stationId);
   },
 
   async deletedReport(request, response) {

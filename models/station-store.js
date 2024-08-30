@@ -25,6 +25,23 @@ export const stationStore = {
     return list;
   },
 
+  // Retrieves stations bu user id and sorts alphabetcially
+  async getStationsByUserId(userid) { 
+    await db.read();
+    const stationsByUserId = db.data.stations.filter((station) => station.userid === userid); 
+
+    const sortedStations = stationsByUserId.sort((a, b) => { // ref function
+      if (a.title < b.title) { // if "a" comes before "b"
+        return -1;
+       }  
+      if (a.title > b.title) { // if "b" comes before "a"
+        return 1;
+        } 
+      return 0; // if "a" and "b" are equal
+    });
+    return sortedStations; 
+  },
+
   async deleteStationById(id) {
     await db.read();
     const index = db.data.stations.findIndex((station) => station._id === id);
@@ -35,21 +52,5 @@ export const stationStore = {
   async deleteAllStations() {
     db.data.stations = [];
     await db.write();
-  },
-  
-  async getStationsByUserId(userid) { // built upon pre-existing code to sort by station title (instead of creating new function)
-    await db.read();
-    const stationsByUserId = db.data.stations.filter((station) => station.userid === userid); // function gathers stations associated with userId 
-
-    const sortedStations = stationsByUserId.sort((a, b) => { // ref function
-      if (a.title < b.title) {
-        return -1;
-       }   // `a` comes before `b`
-      if (a.title > b.title) {
-        return 1;
-        }  // `b` comes before `a`
-      return 0; // `a` and `b` are equal
-    });
-    return sortedStations; 
   },
 };

@@ -4,23 +4,23 @@
     {
       "title": "Kilkenny",
       "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -90.88,
-      "latitude": 56.99,
-      "_id": "3ea46595-911e-4ba1-9faf-0454680369c2"
+      "longitude": 44,
+      "latitude": 34,
+      "_id": "9db37311-eff1-4fc9-87fc-7311fb4585cd"
+    },
+    {
+      "title": "Moscow",
+      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
+      "longitude": 33,
+      "latitude": 33,
+      "_id": "b6e4101a-afb0-49ef-b731-4b466d44a5f4"
     },
     {
       "title": "Galway",
       "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -78.9,
-      "latitude": 22.33,
-      "_id": "1ef56208-d914-47ec-a3c5-046fd82448a3"
-    },
-    {
-      "title": "Waterford",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": 0,
-      "latitude": 0,
-      "_id": "590ad78a-bf55-4ddd-9507-84d42aa02f8e"
+      "longitude": -76.33,
+      "latitude": 11.11,
+      "_id": "1fda003c-c137-4d37-a2a5-b5592aecac45"
     }
   ]
 }

@@ -1,80 +1,78 @@
 export const reportAnalytics = {
-
+    // Compares and returns minimum temperature from a station's reports
     getMinTemp(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "No Data";
         }
-
-        let minTemp = station.reports[0]; // had to change from null as it was causing error
+        let minTemp = station.reports[0]; 
         if (station.reports.length > 0) {
             minTemp = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
                 if (station.reports[i].temperature < minTemp.temperature) {
-                minTemp = station.reports[i];
+                    minTemp = station.reports[i];
                 }
             }
         }
-
-        if (minTemp && minTemp.temperature !== undefined) { // accounts for if there are no reports
-            return `${minTemp.temperature}°C`;
-        } else {
+        if (minTemp && minTemp.temperature !== undefined) { // Accounts for if value is undefined
+            const roundedMinTemp = minTemp.temperature.toFixed(1); // Rounded to one decimal place
+            return `${roundedMinTemp}°C`;
+        } 
+        else {
             return "No Data"; 
         }
     },
 
+    // Compares and returns maximum temperature from a station's reports
     getMaxTemp(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "No Data";
         }
-        
         let maxTemp = station.reports[0];
         if (station.reports.length > 0) {
             maxTemp = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
                 if (station.reports[i].temperature > maxTemp.temperature) {
-                maxTemp = station.reports[i];
+                    maxTemp = station.reports[i];
                 }
             }
         }
-
-        if (maxTemp && maxTemp.temperature !== undefined) {
-            return `${maxTemp.temperature}°C`;
-        } else {
+        if (maxTemp && maxTemp.temperature !== undefined) { // Accounts for if value is undefined
+            const roundedMaxTemp = maxTemp.temperature.toFixed(1); // Rounded to one decimal place
+            return `${roundedMaxTemp}°C`;
+        } 
+        else {
             return "No Data"; 
         }
     },
 
-    getMinSpeed(station) {
-
-        if (!station.reports) {
+    // Compares and returns minimum wind speed from a station's reports
+    getMinSpeed(station) { 
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "No Data";
         }
-
         let minSpeed = station.reports[0];
         if (station.reports.length > 0) {
             minSpeed = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
                 if (station.reports[i].windSpeed < minSpeed.windSpeed) {
-                minSpeed = station.reports[i];
+                    minSpeed = station.reports[i];
                 }
             }
         }
-
-        if (minSpeed && minSpeed.windSpeed !== undefined) {
-            return `${minSpeed.windSpeed} kMh`;
-        } else {
+        if (minSpeed && minSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
+            const roundedMinSpeed = minSpeed.windSpeed.toFixed(1); // Rounded to one decimal place
+            return `${roundedMinSpeed} kMh`;
+        } 
+        else {
             return "No Data"; 
         }
     },
 
+    // Compares and returns maximum wind speed from a station's reports
     getMaxSpeed(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if value is undefined
             return "No Data";
         }
-
         let maxSpeed = station.reports[0];
         if (station.reports.length > 0) {
             maxSpeed = station.reports[0];
@@ -85,118 +83,116 @@ export const reportAnalytics = {
             }
         }
 
-        if (maxSpeed && maxSpeed.windSpeed !== undefined) {
-            return `${maxSpeed.windSpeed} kMh`;
+        if (maxSpeed && maxSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
+            const roundedMaxSpeed = maxSpeed.windSpeed.toFixed(1); // Rounded to one decimal place
+            return `${roundedMaxSpeed} kMh`;
         } else {
             return "No Data"; 
         }
     },
 
+    // Compares and returns minimum pressure from a station's reports
     getMinPressure(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "no data";
         }
-
         let minPressure = station.reports[0];
         if (station.reports.length > 0) {
             minPressure = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
                 if (station.reports[i].pressure < minPressure.pressure) {
-                minPressure = station.reports[i];
+                    minPressure = station.reports[i];
                 }
             }
         }
-
-        if (minPressure && minPressure.pressure !== undefined) {
+        if (minPressure && minPressure.pressure !== undefined) { // Accounts for if there are no reports in a station
             return `${minPressure.pressure} hPa`;
-        } else {
-            return "No Data"; 
-            
+        } 
+        else {
+            return "No Data";   
         }
     },
 
+    // Compares and returns maximum pressure from a station's reports
     getMaxPressure(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "No data";
         }
-
         let maxPressure = station.reports[0];
         if (station.reports.length > 0) {
             maxPressure = station.reports[0];
             for (let i = 1; i < station.reports.length; i++) {
                 if (station.reports[i].pressure > maxPressure.pressure) {
-                maxPressure = station.reports[i];
+                    maxPressure = station.reports[i];
                 }
             }
         }
-
-        if (maxPressure && maxPressure.pressure !== undefined) {
+        if (maxPressure && maxPressure.pressure !== undefined) { // Accounts for if value is undefined
             return `${maxPressure.pressure} hPa`;
-        } else {
+        } 
+        else {
             return "No Data"; 
         }
     },
 
+    // Returns latest rpeort added to a station
     getLatestReport(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return null;
         }
-
         let latestReport = station.reports[0];
         if (station.reports.length > 0) {
             latestReport = station.reports[0];
     
-            // For loop to compare times of reports and returns most recent
+            // Compares times of reports and returns most recent
             for (const report of station.reports) {
                 if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                     latestReport = report;
                 }
             }
         }
-
-        if (latestReport !== undefined) {
+        if (latestReport !== undefined) { // Accounts for if there are no reports in a station
             return latestReport;
-        } else {
+        } 
+        else {
             return null; 
         }
     },
 
-    getCurrentTemp(currentTemp, unit) {
-        return `${currentTemp}${unit}`;
+    // Returns current temperature from most recent report
+    getCurrentTemp(currentTemp, unit) { // ref
+        const roundedCurrentTemp = parseFloat(currentTemp).toFixed(1); //ref
+        return `${roundedCurrentTemp} ${unit}`;
     },
 
+    // Returns current wind speed from most recent report
     getCurrentSpeed(currentSpeed, unit) {
-        return `${currentSpeed} ${unit}`;
+        const roundedCurrentSpeed = parseFloat(currentSpeed).toFixed(1);
+        return `${roundedCurrentSpeed} ${unit}`;
     },
 
+    // Returns current pressure from most recent report
     getCurrentPressure(currentPressure, unit) {
         return `${currentPressure} ${unit}`;
     },
 
+    // Returns current wind direction from most recent report
     getWindDirection(station) {
-
         if (!station.reports) { // Accounts for if there is no report
             return null;
         }
-    
         let latestReport = station.reports[0];
-    
         for (const report of station.reports) { //ref report of station.reports
             if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                 latestReport = report;
             }
         }
-
-       if (!latestReport) { // Aclso account for if there is no report/"latest report"
-         return null; 
-       }
-    
+        if (!latestReport) { // Accounts for if there is no report/"latest report"
+            return null; 
+        }
         let degrees = latestReport.windDirection;
 
-
+        // Assigns a wind direction to degrees
         if (degrees >= 337.5 || degrees < 22.5) {
             return 'North';
         } else if (degrees >= 22.5 && degrees < 67.5) {
@@ -214,49 +210,44 @@ export const reportAnalytics = {
         } else if (degrees >= 292.5 && degrees < 337.5) {
             return 'North West';
         }
-
         return 'Unknown direction'; 
     },
 
+    // Converts Celcius value from current temperature to Fahrenheit value
     convertCelciusToFahrenheit(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // Accounts for if there are no reports in a station
             return "No Data";
         }
-
         let latestReport = station.reports[0];
         for (const report of station.reports) {
             if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                 latestReport = report;
             }
         }
-
         if (latestReport) {
             const fahrenheitTemp = (latestReport.temperature * 9/5) + 32;
-            return `${fahrenheitTemp}°F`; 
-        } else {
+            const roundedFahrenheitTemp = fahrenheitTemp.toFixed(1); // Rounds to 1 decial place
+            return `${roundedFahrenheitTemp}°F`;
+        } 
+        else {
             return "No Data";
         }
     },
 
+    // Assigns a weather description with each weather code
     getWeatherCodeDescription(station) {
-
-        if (!station.reports) {
-            return null; // Return a default message if no reports are available
+        if (!station.reports) { // If no reports are available
+            return null; 
         }
-
         let latestReport = station.reports[0];
-
         for (const report of station.reports) {
             if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                 latestReport = report;
             }
         }
-
         if (!latestReport) {
-            return null; // Return a default message if weather code is not available
+            return null; // If no weather code available/defined
         }
-
         let weatherCodeDescription = latestReport.code;
         
         if (weatherCodeDescription == 200) {
@@ -372,27 +363,22 @@ export const reportAnalytics = {
         } 
     },
 
+    // Assigns openWeather image with each weather code
     getWeatherCodeIcon(station) {
-
-        if (!station.reports) {
+        if (!station.reports) { // If no reports
             return null; 
         }
-
         let latestReport = station.reports[0];
-
         for (const report of station.reports) {
             if (new Date(report.time) > new Date(latestReport.time)) { // ref function
                 latestReport = report;
             }
         }
-
         if (!latestReport) {
             return null; 
         }
-
         let weatherCodeIcon = latestReport.code; // ref
-
-        switch (weatherCodeIcon) {
+        switch (weatherCodeIcon) { // ref
             case 200:
             case 201:
             case 202:

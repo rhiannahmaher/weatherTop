@@ -1,7 +1,3 @@
-# Web Development Template
+weatherRop App
 
-A starter project for learning web development
-
-This is an Express.js project, designed to work well with the Glitch development environment. It includes basic express setup, handlebars templating, routing, + lowdb database.
-
-This template is prepared in support of [Web Development II](https://next.tutors.dev/course/web-dev-2-2023) module in the [Higher Diploma in Computing](https://reader.tutors.dev/course/wit-hdip-comp-sci-showcase.netlify.app) at [SETU](https://www.setu.ie/), Ireland.
+This is a basic weather application that allows users to add, delete, and select weather stations, add and delete weather reports, and display current weather information. The app allows users to sign up/log and uses HTML, CSS, Glitch and uses data from OpenWeather.

@@ -8,7 +8,7 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationsByUserId(loggedInUser._id);
 
-    // For loop to gather reports for each station
+    // Gathers reports for each station 
     for (const station of stations) { // ref
       const reports = await reportStore.getReportsByStationId(station._id);
       station.reports = reports;
@@ -21,13 +21,12 @@ export const dashboardController = {
       station.maxPressure = reportAnalytics.getMaxPressure(station);
 
       station.latestReport = reportAnalytics.getLatestReport(station); 
-
       station.windDirection = reportAnalytics.getWindDirection(station);
       station.fahrenheitTemp = reportAnalytics.convertCelciusToFahrenheit(station);
       station.weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
       station.weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
 
-      // If statement to account for if there are no reports available
+      // Accounts for if there are no reports available for a station
       if (station.latestReport) { 
         station.currentTemp = station.latestReport.temperature;
         station.currentSpeed = station.latestReport.windSpeed;
@@ -36,18 +35,17 @@ export const dashboardController = {
         station.currentTempWithUnit = reportAnalytics.getCurrentTemp(station.currentTemp, '°C');
         station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "kMh");
         station.currentPressureWithUnit = reportAnalytics.getCurrentPressure(station.currentPressure, "hPa");
-      } else {
+      } 
+      else {
         station.currentTempWithUnit = "No Data";
         station.currentSpeedWithUnit = "No Data";
         station.currentPressureWithUnit = "No Data";
       }
     }
-
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stations, 
     };
-    
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
@@ -57,7 +55,6 @@ export const dashboardController = {
     const newStation = {
       title: request.body.title,
       userid: loggedInUser._id,
-
       longitude: Number(request.body.longitude),
       latitude: Number(request.body.latitude),
     };
@@ -65,13 +62,20 @@ export const dashboardController = {
     await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
+
+  // Sorts stations alphabetically
+  async sortStations(request, response) {
+    const userid = request.params.userid; 
+    const stations = await stationStore.getStationsByUserId(userid);
+    response.render('station-view', stations);
+  },
   
+  // Deletes stations & reports attached to station
   async deleteStation(request, response) {
     const stationId = request.params.id;  
     console.log(`Deleting Station ${stationId}`);
-
     await reportStore.deleteAllReports(stationId); // Deletes reports associated with station id first
-    await stationStore.deleteStationById(stationId); // Station then deleted
+    await stationStore.deleteStationById(stationId); // Then deletes station
     response.redirect("/dashboard");
   },
 };
