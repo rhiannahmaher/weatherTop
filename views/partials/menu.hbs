@@ -22,7 +22,7 @@
 </nav>
 
 <script>
-  var activeElement = document.getElementById("{{active}}"); // changed script to find active id, remove previous colour, and then add new colour
-  activeElement.classList.remove("has-background-warning-light");
+  var activeElement = document.getElementById("{{active}}"); // Finds "active" page, updates colour accordingly
+  activeElement.classList.remove("has-background-warning-light"); // ref
   activeElement.classList.add("has-background-warning");
 </script>

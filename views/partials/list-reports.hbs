@@ -1,5 +1,5 @@
 <div class="columns is-multiline">
-  
+
   <!-- Station Location -->
   <div class="column is-one-fifth">
     <div class="box">
@@ -8,7 +8,7 @@
           <div class="content">
             <p class="title is-4 mb-6">
               {{station.title}}
-              </p>
+            </p>
             <p class="subtitle has-text-weight-semibold is-6">
               Lat: {{station.latitude}}<br>
               Lng: {{station.longitude}} <!-- This does not work correctly but have left it in to show that I was trying to pull the API's longitude -->
@@ -126,23 +126,47 @@
   </div>
 </div>
 
-<div class="box" id="chart"></div>
-<script>
-  data = {
-    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    datasets: [
-      { values: [18, 40, 30, 35, 8, 52, 17, -4] }
-    ]
-  };
-  new frappe.Chart("#chart", {
-    data: data,
-    type: "line",
-    height: 180,
-    colors: ["red"]
-  });
-</script>
+<div class="box" id="chart">
+  <script>
+    const data = {
+      labels: [
+        {{#each forecast.trendLabels}}
+          "{{this}}",
+        {{/each}}
+      ],
+      datasets: [
+        {
+          name: "Temperature", type: "line",
+          values: [
+            {{#each forecast.tempTrend}}
+              {{this}},
+            {{/each}}
+          ]
+        }
+      ]
+    }
 
-<div class="box box-link-hover-shadow">
+    const chart = new frappe.Chart("#chart", {
+      title: "Temperature Trend",
+      data: data,
+      type: 'line',
+      height: 250,
+      colors: ["yellow"],
+    })
+  </script>
+</div>
+
+<div id="map">
+  <script>
+    var map = L.map('map').setView([{{station.latitude}}, {{station.longitude}}], 14);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  </script>
+</div>
+
+<div class="box box-link-hover-shadow mt-5">
   <div class="table-container">
     <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
       <thead>

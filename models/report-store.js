@@ -19,6 +19,27 @@ export const reportStore = {
     return report; 
   },
 
+  async addForecastToDB(stationId, report) {
+    try {
+        await db.read();
+        
+        // Generate a new ID for the report
+        report._id = v4();
+        report.stationid = stationId;
+        
+        // Add the new report to the database
+        db.data.reports.push(report);
+        
+        // Save the updated database
+        await db.write();
+        
+        return report;
+    } catch (error) {
+        console.error("Failed to add forecast to database:", error.message);
+        throw error; // Propagate the error
+    }
+},
+
   async getReportsByStationId(id) {
     await db.read();
     return db.data.reports.filter((report) => report.stationid === id);

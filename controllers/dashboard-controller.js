@@ -32,7 +32,7 @@ export const dashboardController = {
         station.currentSpeed = station.latestReport.windSpeed;
         station.currentPressure = station.latestReport.pressure;
         
-        station.currentTempWithUnit = reportAnalytics.getCurrentTemp(station.currentTemp, '°C');
+        station.currentTempWithUnit = reportAnalytics.getCurrentTemp(station.currentTemp, "°C");
         station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "kMh");
         station.currentPressureWithUnit = reportAnalytics.getCurrentPressure(station.currentPressure, "hPa");
       } 
@@ -67,13 +67,13 @@ export const dashboardController = {
   async sortStations(request, response) {
     const userid = request.params.userid; 
     const stations = await stationStore.getStationsByUserId(userid);
-    response.render('station-view', stations);
+    response.render("station-view", stations);
   },
   
   // Deletes stations & reports attached to station
   async deleteStation(request, response) {
     const stationId = request.params.id;  
-    console.log(`Deleting Station ${stationId}`);
+    console.log(`deleting Station ${stationId}`);
     await reportStore.deleteAllReports(stationId); // Deletes reports associated with station id first
     await stationStore.deleteStationById(stationId); // Then deletes station
     response.redirect("/dashboard");

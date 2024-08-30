@@ -34,3 +34,4 @@ table .button-cell {
     visibility: hidden;
 }
 
+#map { height: 300px; }
