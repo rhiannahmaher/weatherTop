@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
-import dayjs from 'dayjs'; // ref
+import dayjs from 'dayjs';
 
 const db = initStore("reports");
 
@@ -19,26 +19,14 @@ export const reportStore = {
     return report; 
   },
 
-  async addForecastToDB(stationId, report) {
-    try {
-        await db.read();
-        
-        // Generate a new ID for the report
-        report._id = v4();
-        report.stationid = stationId;
-        
-        // Add the new report to the database
-        db.data.reports.push(report);
-        
-        // Save the updated database
-        await db.write();
-        
-        return report;
-    } catch (error) {
-        console.error("Failed to add forecast to database:", error.message);
-        throw error; // Propagate the error
-    }
-},
+  async addForecast(stationId, report) {
+    await db.read();
+    report._id = v4();
+    report.stationid = stationId;
+    db.data.reports.push(report);
+    await db.write();
+    return report;
+  },
 
   async getReportsByStationId(id) {
     await db.read();
@@ -68,9 +56,11 @@ export const reportStore = {
     await db.write();
   },
 
+  // Deletes all reports associated with a station
+  // Reference: https://www.w3schools.com/jsref/jsref_filter.asp
   async deleteAllReports(stationId) {
     await db.read(); 
-    db.data.reports = db.data.reports.filter(report => report.stationid !== stationId); // ref filter function
+    db.data.reports = db.data.reports.filter(report => report.stationid !== stationId); 
     await db.write(); 
-  },
+  }
 }

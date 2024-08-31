@@ -8,8 +8,9 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationsByUserId(loggedInUser._id);
 
-    // Gathers reports for each station 
-    for (const station of stations) { // ref
+    // For-of loop to gather reports for each station 
+    // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+    for (const station of stations) { 
       const reports = await reportStore.getReportsByStationId(station._id);
       station.reports = reports;
 
@@ -26,7 +27,7 @@ export const dashboardController = {
       station.weatherCodeDescription = reportAnalytics.getWeatherCodeDescription(station);
       station.weatherCodeIcon = reportAnalytics.getWeatherCodeIcon(station);
 
-      // Accounts for if there are no reports available for a station
+      // Adds current weather to station summary
       if (station.latestReport) { 
         station.currentTemp = station.latestReport.temperature;
         station.currentSpeed = station.latestReport.windSpeed;
@@ -36,6 +37,7 @@ export const dashboardController = {
         station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "kMh");
         station.currentPressureWithUnit = reportAnalytics.getCurrentPressure(station.currentPressure, "hPa");
       } 
+      // Accounts for if there are no reports
       else {
         station.currentTempWithUnit = "No Data";
         station.currentSpeedWithUnit = "No Data";
@@ -74,8 +76,8 @@ export const dashboardController = {
   async deleteStation(request, response) {
     const stationId = request.params.id;  
     console.log(`deleting Station ${stationId}`);
-    await reportStore.deleteAllReports(stationId); // Deletes reports associated with station id first
-    await stationStore.deleteStationById(stationId); // Then deletes station
+    await reportStore.deleteAllReports(stationId); 
+    await stationStore.deleteStationById(stationId); // Deletes reports associated with station id first, followed by station
     response.redirect("/dashboard");
-  },
-};
+  }
+}

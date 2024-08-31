@@ -1,33 +1,4 @@
 {
   "file": "./models/stations.json",
-  "stations": [
-    {
-      "title": "Kilkenny",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": 44,
-      "latitude": 34,
-      "_id": "9db37311-eff1-4fc9-87fc-7311fb4585cd"
-    },
-    {
-      "title": "Moscow",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": 33,
-      "latitude": 33,
-      "_id": "b6e4101a-afb0-49ef-b731-4b466d44a5f4"
-    },
-    {
-      "title": "Galway",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -76.33,
-      "latitude": 11.11,
-      "_id": "1fda003c-c137-4d37-a2a5-b5592aecac45"
-    },
-    {
-      "title": "Tramore",
-      "userid": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8",
-      "longitude": -7.150328671818175,
-      "latitude": 52.161256572800994,
-      "_id": "750785c4-06e4-4880-ab2e-fbfe3a46908b"
-    }
-  ]
+  "stations": []
 }

@@ -4,38 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/> 
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
 
-    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script> <!-- Frappe chart script -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script> <!-- Dayjs script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" <!-- Leaflet map script --> 
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin="">
     </script>
+
+    <!-- Navigation burger -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    
       $navbarBurgers.forEach( el => {
         el.addEventListener('click', () => {
-    
           const target = el.dataset.target;
           const $target = document.getElementById(target);
-    
           el.classList.toggle('is-active');
           $target.classList.toggle('is-active');
-    
         });
       });
-    
     });
     </script>
+
   </head>
   <body class="has-background-white-ter">
     <div class="container has-background-white-ter">

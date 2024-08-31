@@ -5,5 +5,5 @@ export const aboutController = {
     };
     console.log("about rendering");
     response.render("about-view", viewData);
-  },
-};
+  }
+}

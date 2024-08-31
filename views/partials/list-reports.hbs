@@ -1,5 +1,7 @@
 <div class="columns is-multiline">
 
+<!-- Station Weather Summary on Station View-->
+
   <!-- Station Location -->
   <div class="column is-one-fifth">
     <div class="box">
@@ -126,6 +128,7 @@
   </div>
 </div>
 
+<!-- Temperature Trend Chart -->
 <div class="box" id="chart">
   <script>
     const data = {
@@ -156,9 +159,12 @@
   </script>
 </div>
 
+<!-- Station Map -->
 <div id="map">
   <script>
-    var map = L.map('map').setView([{{station.latitude}}, {{station.longitude}}], 14);
+    var map = L.map('map').setView([{{station.latitude}}, {{station.longitude}}], 14);  
+    var marker = L.marker([{{station.latitude}}, {{station.longitude}}]).addTo(map);
+    marker.bindPopup("{{station.title}} Station").openPopup();
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -166,6 +172,7 @@
   </script>
 </div>
 
+<!-- Report List -->
 <div class="box box-link-hover-shadow mt-5">
   <div class="table-container">
     <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
@@ -194,7 +201,7 @@
             </a>
           </td>
           <td class="button-cell has-text-centered">
-            <form action="/station/{{stationId}}/report/{{reportId}}" method="POST"> <!-- ref for method=dleted -->
+            <form action="/station/{{stationId}}/report/{{reportId}}" method="POST"> 
               <a href="/station/{{../station._id}}/deletereport/{{_id}}" class="button is-small has-background-warning-light">
                 {{>icons/delete}}
               </a>

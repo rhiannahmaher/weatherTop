@@ -1,19 +1,4 @@
 {
   "file": "./models/users.json",
-  "users": [
-    {
-      "firstName": "Rhiannah",
-      "lastName": "Maher",
-      "email": "rhiannahmaher@hotmail.com",
-      "password": "rhiannah",
-      "_id": "ad4e5bcb-c1a1-4a9b-a5e2-eb92e516bad8"
-    },
-    {
-      "firstName": "Brian",
-      "lastName": "Waldron",
-      "email": "rhiannahbananah@gmail.com",
-      "password": "rhiannahmaher",
-      "_id": "543dc726-393b-4292-9e49-28235010a00c"
-    }
-  ]
+  "users": []
 }

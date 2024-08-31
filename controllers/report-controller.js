@@ -1,6 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { reportStore } from "../models/report-store.js";
-import dayjs from 'dayjs'; // ref
+import dayjs from 'dayjs';
 
 export const reportController = {
   async index(request, response) {
@@ -39,4 +39,4 @@ export const reportController = {
     await reportStore.deleteReport(reportId, deletedReport);
     response.redirect("/station/" + stationId);
   }
-};
+}

@@ -21,8 +21,10 @@
   </div>
 </nav>
 
+<!-- Finds "active" page and updates colour accordingly -->
+<!-- Reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList -->
 <script>
-  var activeElement = document.getElementById("{{active}}"); // Finds "active" page, updates colour accordingly
-  activeElement.classList.remove("has-background-warning-light"); // ref
+  var activeElement = document.getElementById("{{active}}"); 
+  activeElement.classList.remove("has-background-warning-light"); 
   activeElement.classList.add("has-background-warning");
 </script>

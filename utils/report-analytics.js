@@ -14,7 +14,7 @@ export const reportAnalytics = {
             }
         }
         if (minTemp && minTemp.temperature !== undefined) { // Accounts for if value is undefined
-            const roundedMinTemp = minTemp.temperature.toFixed(1); // Rounded to one decimal place
+            const roundedMinTemp = minTemp.temperature.toFixed(1); // Round to 1 decimal place
             return `${roundedMinTemp}°C`;
         } 
         else {
@@ -37,7 +37,7 @@ export const reportAnalytics = {
             }
         }
         if (maxTemp && maxTemp.temperature !== undefined) { // Accounts for if value is undefined
-            const roundedMaxTemp = maxTemp.temperature.toFixed(1); // Rounded to one decimal place
+            const roundedMaxTemp = maxTemp.temperature.toFixed(1); // Round to 1 decimal place
             return `${roundedMaxTemp}°C`;
         } 
         else {
@@ -60,7 +60,7 @@ export const reportAnalytics = {
             }
         }
         if (minSpeed && minSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
-            const roundedMinSpeed = minSpeed.windSpeed.toFixed(1); // Rounded to one decimal place
+            const roundedMinSpeed = minSpeed.windSpeed.toFixed(1); // Round to 1 decimal place
             return `${roundedMinSpeed} kMh`;
         } 
         else {
@@ -84,7 +84,7 @@ export const reportAnalytics = {
         }
 
         if (maxSpeed && maxSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
-            const roundedMaxSpeed = maxSpeed.windSpeed.toFixed(1); // Rounded to one decimal place
+            const roundedMaxSpeed = maxSpeed.windSpeed.toFixed(1); // Round to 1 decimal place
             return `${roundedMaxSpeed} kMh`;
         } else {
             return "No Data"; 
@@ -135,7 +135,7 @@ export const reportAnalytics = {
         }
     },
 
-    // Returns latest rpeort added to a station
+    // Returns latest report added to a station
     getLatestReport(station) {
         if (!station.reports) { // Accounts for if there are no reports in a station
             return null;
@@ -145,8 +145,9 @@ export const reportAnalytics = {
             latestReport = station.reports[0];
     
             // Compares times of reports and returns most recent
+            // Reference: https://www.w3schools.com/js/js_dates.asp
             for (const report of station.reports) {
-                if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+                if (new Date(report.time) > new Date(latestReport.time)) { 
                     latestReport = report;
                 }
             }
@@ -182,8 +183,11 @@ export const reportAnalytics = {
             return null;
         }
         let latestReport = station.reports[0];
-        for (const report of station.reports) { //ref report of station.reports
-            if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+
+        // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+        // Reference: https://www.w3schools.com/js/js_dates.asp
+        for (const report of station.reports) { 
+            if (new Date(report.time) > new Date(latestReport.time)) { 
                 latestReport = report;
             }
         }
@@ -214,19 +218,20 @@ export const reportAnalytics = {
     },
 
     // Converts Celcius value from current temperature to Fahrenheit value
+    // Reference: https://www.geeksforgeeks.org/javascript-program-to-convert-celsius-to-fahrenheit/
     convertCelciusToFahrenheit(station) {
         if (!station.reports) { // Accounts for if there are no reports in a station
             return "No Data";
         }
         let latestReport = station.reports[0];
         for (const report of station.reports) {
-            if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+            if (new Date(report.time) > new Date(latestReport.time)) { 
                 latestReport = report;
             }
         }
         if (latestReport) {
             const fahrenheitTemp = (latestReport.temperature * 9/5) + 32;
-            const roundedFahrenheitTemp = fahrenheitTemp.toFixed(1); // Rounds to 1 decial place
+            const roundedFahrenheitTemp = fahrenheitTemp.toFixed(1); // Rounds to 1 decimal place
             return `${roundedFahrenheitTemp}°F`;
         } 
         else {
@@ -241,7 +246,7 @@ export const reportAnalytics = {
         }
         let latestReport = station.reports[0];
         for (const report of station.reports) {
-            if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+            if (new Date(report.time) > new Date(latestReport.time)) { 
                 latestReport = report;
             }
         }
@@ -364,21 +369,22 @@ export const reportAnalytics = {
     },
 
     // Assigns openWeather image with each weather code
+    // Reference: https://medium.com/@sulistef/3-alternatives-to-if-else-to-improve-code-reading-in-javascript-8e624a2c1343
     getWeatherCodeIcon(station) {
         if (!station.reports) { // If no reports
             return null; 
         }
         let latestReport = station.reports[0];
         for (const report of station.reports) {
-            if (new Date(report.time) > new Date(latestReport.time)) { // ref function
+            if (new Date(report.time) > new Date(latestReport.time)) { 
                 latestReport = report;
             }
         }
         if (!latestReport) {
             return null; 
         }
-        let weatherCodeIcon = latestReport.code; // ref
-        switch (weatherCodeIcon) { // ref
+        let weatherCodeIcon = latestReport.code; 
+        switch (weatherCodeIcon) { 
             case 200:
             case 201:
             case 202:
@@ -445,4 +451,4 @@ export const reportAnalytics = {
                 return "https://openweathermap.org/img/wn/04d@2x.png";
         }
     }
- };
+ }

@@ -25,19 +25,20 @@ export const stationStore = {
     return list;
   },
 
-  // Retrieves stations bu user id and sorts alphabetcially
+  // Retrieves stations by user id and sorts alphabetcially
+  // Reference: https://www.freecodecamp.org/news/how-to-sort-alphabetically-in-javascript/
   async getStationsByUserId(userid) { 
     await db.read();
     const stationsByUserId = db.data.stations.filter((station) => station.userid === userid); 
 
-    const sortedStations = stationsByUserId.sort((a, b) => { // ref function
-      if (a.title < b.title) { // if "a" comes before "b"
+    const sortedStations = stationsByUserId.sort((a, b) => { 
+      if (a.title < b.title) { 
         return -1;
        }  
-      if (a.title > b.title) { // if "b" comes before "a"
+      if (a.title > b.title) {
         return 1;
         } 
-      return 0; // if "a" and "b" are equal
+      return 0;
     });
     return sortedStations; 
   },
@@ -52,5 +53,5 @@ export const stationStore = {
   async deleteAllStations() {
     db.data.stations = [];
     await db.write();
-  },
-};
+  }
+}

@@ -1,5 +1,7 @@
 <div class="columns is-multiline">
 
+<!-- Station Weather Summary on Dashboard -->
+
   <!-- Station Location -->
   <div class="column is-one-fifth">
     <div class="box has-background-white-ter">
@@ -15,7 +17,7 @@
             </p>
           </div>
         </div>
-        <figure class="media-right"> <!-- Input CSS styling to shift icon to bottom right so that the city name does not run over -->
+        <figure class="media-right"> 
           <p class="image is-64x64">
             {{>icons/location}}
           </p>
@@ -40,7 +42,7 @@
         </div>
         <figure class="media-right">
           <p class="image is-64x64">
-            <img src="{{#if weatherCodeIcon}}{{weatherCodeIcon}}{{else}}https://placehold.co/32{{/if}}" alt="Weather Icon">
+            <img src="{{#if weatherCodeIcon}}{{weatherCodeIcon}}{{else}}https://placehold.co/32{{/if}}" alt="Weather Icon"> <!-- plots placeholder image when no weatherCodeIcon -->
           </p>
         </figure>
       </article>
