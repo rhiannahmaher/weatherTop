@@ -14,16 +14,12 @@ Users can add as many stations as needed and can manually add weather reports or
 
 ## Dependencies
 
-### Netlify
-Users can access deployed weatherTop application via Netlify using the following URL:
-No further prerequiute is required.
-
 ### Glitch
-Users can access deployed weatherTop application via Glitch using the following URL:
+Users can access deployed weatherTop application via Glitch using the following URL: [Glitch weatherTop Deployment](https://aluminum-unexpected-bearskin.glitch.me).
 No further prerequisite is required.
 
 ### GitHub
-Users can access weatherTop application via GitHub repo using the following URL:
+Users can access weatherTop application via GitHub repository using the following URL: [GitHub weatherTop Repository](https://github.com/rhiannahmaher/weatherTop.git).
 Prerequisites are as follows:
 ```json
 {
@@ -41,15 +37,6 @@ Prerequisites are as follows:
 ```
 ## Installing
 
-### Netlify
-Users can access deployed weatherTop application via Netlify using the following URL:
-
-### Glitch
-Users can access deployed weatherTop application via Glitch using the following URL:
-
-### GitHub
-Users can access GitHub project using the following URL:
-
 ## Modifications (Glitch & Github)
 Before serving the application, replace the placeholder API key with your personal API key. 
 Navigate to _controllers/station-controller.js_ and update line 14 & line 103 with your openWeather API key.
@@ -57,11 +44,11 @@ Navigate to _controllers/station-controller.js_ and update line 14 & line 103 wi
 ## Executing program (GitHub)
 Clone the project repository using the following command:
 ```bash
-git clone []
+git clone git@github.com:rhiannahmaher/weatherTop.git
 ```
 After cloning, navigate to the project directory:
 ```bash
-cd []
+cd weatherTop
 ```
 Ensure Node.js is installed, and run:
 ```bash
