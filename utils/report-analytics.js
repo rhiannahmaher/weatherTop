@@ -61,7 +61,7 @@ export const reportAnalytics = {
         }
         if (minSpeed && minSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
             const roundedMinSpeed = minSpeed.windSpeed.toFixed(1); // Round to 1 decimal place
-            return `${roundedMinSpeed} kMh`;
+            return `${roundedMinSpeed} m/s`;
         } 
         else {
             return "No Data"; 
@@ -85,7 +85,7 @@ export const reportAnalytics = {
 
         if (maxSpeed && maxSpeed.windSpeed !== undefined) { // Accounts for if value is undefined
             const roundedMaxSpeed = maxSpeed.windSpeed.toFixed(1); // Round to 1 decimal place
-            return `${roundedMaxSpeed} kMh`;
+            return `${roundedMaxSpeed} m/s`;
         } else {
             return "No Data"; 
         }

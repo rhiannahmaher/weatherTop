@@ -1,4 +1,17 @@
 {
   "file": "./models/reports.json",
-  "reports": []
+  "reports": [
+    {
+      "latitude": 42.7023,
+      "longitude": -83.4027,
+      "time": "2024-08-31 21:49:45",
+      "code": 802,
+      "temperature": 26.97,
+      "windSpeed": 4.63,
+      "windDirection": 280,
+      "pressure": 1014,
+      "_id": "6eb05c90-0df6-4a51-8094-af488ec177f3",
+      "stationid": "4a44d46e-d130-4d8a-9b88-097fdaefb458"
+    }
+  ]
 }

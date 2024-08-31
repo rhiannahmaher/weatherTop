@@ -49,7 +49,7 @@ export const stationController = {
       const currentPressure = latestReport.pressure;
 
       currentTempWithUnit = reportAnalytics.getCurrentTemp(currentTemp, "°C");
-      currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(currentSpeed, "kMh");
+      currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(currentSpeed, "m/s");
       currentPressureWithUnit = reportAnalytics.getCurrentPressure(currentPressure, "hPa");
     }
     const viewData = {

@@ -34,7 +34,7 @@ export const dashboardController = {
         station.currentPressure = station.latestReport.pressure;
         
         station.currentTempWithUnit = reportAnalytics.getCurrentTemp(station.currentTemp, "°C");
-        station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "kMh");
+        station.currentSpeedWithUnit = reportAnalytics.getCurrentSpeed(station.currentSpeed, "m/s");
         station.currentPressureWithUnit = reportAnalytics.getCurrentPressure(station.currentPressure, "hPa");
       } 
       // Accounts for if there are no reports
@@ -52,10 +52,14 @@ export const dashboardController = {
     response.render("dashboard-view", viewData);
   },
 
+  // Adds station to Dashboard. Capitalizes first letter of station title
+  // Reference: https://www.shecodes.io/athena/3710-how-to-capitalize-the-first-letter-in-a-string-with-javascript#:~:text=Using%20JavaScript%2C%20you%20can%20capitalize,with%20the%20toUpperCase()%20method.
   async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    const stationTitle = request.body.title;
+    const title = stationTitle.charAt(0).toUpperCase() + stationTitle.slice(1);
     const newStation = {
-      title: request.body.title,
+      title: title,
       userid: loggedInUser._id,
       longitude: Number(request.body.longitude),
       latitude: Number(request.body.latitude),

@@ -79,9 +79,10 @@ Initial Release & see commit change throughout.
 - CSS: Styling framework for designing application [CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
 ## References
-- for-of loop logic was inspired by MDN: [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of).
+- For-of loop logic was inspired by MDN: [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of).
 - Array filter() function was inspired by W3Schools: [JavaScript Array filter()](https://www.w3schools.com/jsref/jsref_filter.asp).
 - Logic for sorting stations alphabetically was inspired by FreeCodeCamp: [Sort Alphabetically in JavaScript – How to Order by Name in JS](https://www.freecodecamp.org/news/how-to-sort-alphabetically-in-javascript/).
+- Logic for capitalizing station title taken from SheCodes: [[JavaScript] - How to Capitalize the First Letter in a String with JavaScript](https://www.shecodes.io/athena/3710-how-to-capitalize-the-first-letter-in-a-string-with-javascript#:~:text=Using%20JavaScript%2C%20you%20can%20capitalize,with%20the%20toUpperCase()%20method.)
 - Viewport fill logic taken from StackOverflow: [How to make an element fill the remaining viewport height?](https://stackoverflow.com/questions/50043803/how-to-make-an-element-fill-the-remaining-viewport-height).
 - Password visibility on hover insired by MDN: [visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) & [CSS :hover Selector](https://www.w3schools.com/cssref/sel_hover.php).
 - new Date() logic inspired by W3Schools: [JavaScript Date Objects](https://www.w3schools.com/js/js_dates.asp).

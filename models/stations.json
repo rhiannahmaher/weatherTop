@@ -1,4 +1,12 @@
 {
   "file": "./models/stations.json",
-  "stations": []
+  "stations": [
+    {
+      "title": "Waterford",
+      "userid": "aa198805-049e-440a-a97c-036541378cce",
+      "longitude": 0,
+      "latitude": 0,
+      "_id": "4a44d46e-d130-4d8a-9b88-097fdaefb458"
+    }
+  ]
 }
