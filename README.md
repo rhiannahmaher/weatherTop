@@ -15,7 +15,7 @@ Users can add as many stations as needed and can manually add weather reports or
 ## Dependencies
 
 ### Glitch
-Users can access deployed weatherTop application via Glitch using the following URL: [Glitch weatherTop Deployment](https://aluminum-unexpected-bearskin.glitch.me).
+Users can access deployed weatherTop application via Glitch. Refer to GitHub repository ReadMe for deployed Glitch URL.
 No further prerequisite is required.
 
 ### GitHub

@@ -21,6 +21,6 @@ export const userController = {
     };
     console.log(`updating User ${userId}`);
     await userStore.updateUser(userId, updatedUser); // removed const report = await reportStore.getReportById(reportId); | await reportStore.updateReport(report, updatedReport); as would not update
-    response.redirect("/profile"); 
+    response.redirect("/login"); 
   }
 }
