@@ -15,7 +15,7 @@ Users can add as many stations as needed and can manually add weather reports or
 ## Dependencies
 
 ### Glitch
-Users can access deployed weatherTop application via Glitch. Refer to GitHub repository ReadMe for deployed Glitch URL.
+Users can access deployed weatherTop application via Glitch using the following URL: [Glitch Deployment URL](https://rich-grand-nautilus.glitch.me). 
 No further prerequisite is required.
 
 ### GitHub
@@ -48,7 +48,7 @@ git clone git@github.com:rhiannahmaher/weatherTop.git
 ```
 After cloning, navigate to the project directory:
 ```bash
-cd weatherTop
+cd weatherTop-main
 ```
 Ensure Node.js is installed, and run:
 ```bash
